@@ -21,8 +21,6 @@ Each member contributes to the report and presents their own work. This initial 
 - `docs/DISPATCHER_DESIGN_REVIEW.md`: short design review and progress.
 - `milestone1/`: C smoke reader, deterministic fixture generator, tests, and original server evidence.
 - `foreground_background_pilot/`: separate Python pilot, portable tests, and saved results.
-- `presentation/`: final Mostafa slide deck with speaker notes, plus the speaking script.
-- `video/`: recording instructions. The demo video has not been added yet.
 
 ## Completed results
 
@@ -64,12 +62,6 @@ python3 pilot.py --file /path/to/known.bin --seconds 10 --fg-rate 10 --backgroun
 ```
 
 This creates a new result directory. The original server evidence is retained under `server_evidence/`; its absolute paths identify the original run environment.
-
-## Presentation and video
-
-Open `presentation/Milestone1_Mostafa_Babaei.pptx` to see the speaker notes. The repository's measured claims are supported by the linked smoke and pilot evidence. Additional measurements shown in the presentation should be accompanied by their original logs when available.
-
-A demo recording still needs to be made and linked here before the video submission is complete.
 
 ## License
 
