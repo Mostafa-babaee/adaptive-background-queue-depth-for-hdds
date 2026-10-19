@@ -70,3 +70,7 @@ This creates a new result directory. The original server evidence is retained un
 Open `presentation/Milestone1_Mostafa_Babaei.pptx` to see the speaker notes. The repository's measured claims are supported by the linked smoke and pilot evidence. Additional measurements shown in the presentation should be accompanied by their original logs when available.
 
 A demo recording still needs to be made and linked here before the video submission is complete.
+
+## License
+
+The team's original source code and associated software documentation are licensed under the [MIT License](LICENSE). Course materials and third-party content are not covered by this license and retain their original terms.
