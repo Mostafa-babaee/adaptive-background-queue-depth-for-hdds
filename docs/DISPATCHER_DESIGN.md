@@ -2,8 +2,6 @@
 
 Status: architecture reviewed on October 19, 2026. See `DISPATCHER_DESIGN_REVIEW.md` for the completed written review and proposed implementation decisions. The full C/io_uring dispatcher is still Milestone 2 work; team interface agreement remains pending.
 
-For a worked example and the decisions still to agree with the team, see `DESIGN_REVIEW.md`.
-
 ## Purpose
 
 Serve 4 KiB random foreground reads alongside a fixed-chunk sequential background scan on the same HDD. The program controls how many reads it submits; it does not control firmware scheduling or know physical head position.
