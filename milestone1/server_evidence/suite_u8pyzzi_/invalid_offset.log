@@ -1,0 +1,7 @@
+command=["/home/sgf.edubear.net/mb3437s/1st milestone/build/smoke_read", "/home/sgf.edubear.net/mb3437s/1st milestone/mostafa_m1_k5rl5u3o/known.bin", "1"]
+expected_exit=2
+actual_exit=2
+
+
+Usage: smoke_read FILE [OFFSET [LENGTH [COUNT]]]
+OFFSET/LENGTH: multiples of 4096; LENGTH 4096..1048576; COUNT 1..64.

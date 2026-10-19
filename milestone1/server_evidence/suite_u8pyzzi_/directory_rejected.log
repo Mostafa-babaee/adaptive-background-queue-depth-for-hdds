@@ -1,0 +1,6 @@
+command=["/home/sgf.edubear.net/mb3437s/1st milestone/build/smoke_read", "/home/sgf.edubear.net/mb3437s/1st milestone/mostafa_m1_k5rl5u3o"]
+expected_exit=4
+actual_exit=4
+
+
+Rejected: expected a regular file, not a directory, symlink, or device.

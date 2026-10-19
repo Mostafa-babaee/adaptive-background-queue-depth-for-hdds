@@ -1,0 +1,50 @@
+Milestone 1 environment check
+UTC: 2026-10-18T18:47:48Z
+babbage
+mb3437s@sgf.edubear.net
+Linux babbage 6.8.0-106-generic #106-Ubuntu SMP PREEMPT_DYNAMIC Fri Mar  6 07:58:08 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+
+Compiler commands
+cc: /usr/bin/cc
+cc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+gcc: /usr/bin/gcc
+gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+g++: /usr/bin/g++
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+clang: NOT FOUND
+make: /usr/bin/make
+GNU Make 4.3
+pkg-config: /usr/bin/pkg-config
+1.8.1
+python3: /usr/bin/python3
+Python 3.12.3
+
+Library metadata (optional pkg-config)
+Package liburing was not found in the pkg-config search path.
+Perhaps you should add the directory containing `liburing.pc'
+to the PKG_CONFIG_PATH environment variable
+Package 'liburing', required by 'virtual:world', not found
+Package libaio was not found in the pkg-config search path.
+Perhaps you should add the directory containing `libaio.pc'
+to the PKG_CONFIG_PATH environment variable
+Package 'libaio', required by 'virtual:world', not found
+
+Compile and link liburing probe (not executed)
+/home/sgf.edubear.net/mb3437s/1st milestone/results/library_probe_mw99CW/probe.c:1:10: fatal error: liburing.h: No such file or directory
+    1 | #include <liburing.h>
+      |          ^~~~~~~~~~~~
+compilation terminated.
+liburing compile/link: BLOCKED. Keep diagnostics; ask about required development packages.
+
+Python plotting imports
+Python: 3.12.3
+matplotlib: unavailable: No module named 'matplotlib'
+numpy: unavailable: No module named 'numpy'
+
+Limits and io_uring policy (where readable)
+65970376
+/proc/sys/kernel/io_uring_disabled: 0
+/proc/sys/kernel/io_uring_group: -1
+
+Saved log: /home/sgf.edubear.net/mb3437s/1st milestone/results/environment_jqMpuV.log
+No packages installed and no storage configuration changed.

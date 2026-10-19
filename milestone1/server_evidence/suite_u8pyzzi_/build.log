@@ -1,0 +1,7 @@
+command=["bash", "/home/sgf.edubear.net/mb3437s/1st milestone/scripts/build.sh"]
+expected_exit=0
+actual_exit=0
+
+Building with cc
+Built: /home/sgf.edubear.net/mb3437s/1st milestone/build/smoke_read
+

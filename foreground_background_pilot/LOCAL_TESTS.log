@@ -1,0 +1,16 @@
+test_background_only_has_no_foreground_reads (test_pilot.PilotTests.test_background_only_has_no_foreground_reads) ... ok
+test_failed_reads_not_counted_as_success_or_progress (test_pilot.PilotTests.test_failed_reads_not_counted_as_success_or_progress) ... ok
+test_fixture_pattern_matches_milestone_values (test_pilot.PilotTests.test_fixture_pattern_matches_milestone_values) ... ok
+test_foreground_only_has_no_background_reads (test_pilot.PilotTests.test_foreground_only_has_no_background_reads) ... ok
+test_foreground_schedule_does_not_depend_on_policy (test_pilot.PilotTests.test_foreground_schedule_does_not_depend_on_policy) ... ok
+test_interrupt_is_marked_and_submitted_work_is_drained (test_pilot.PilotTests.test_interrupt_is_marked_and_submitted_work_is_drained) ... ok
+test_mixed_caps_ids_and_timestamps (test_pilot.PilotTests.test_mixed_caps_ids_and_timestamps) ... ok
+test_nearest_rank_and_empty_percentile (test_pilot.PilotTests.test_nearest_rank_and_empty_percentile) ... ok
+test_no_default_target_and_explicit_target_denominator (test_pilot.PilotTests.test_no_default_target_and_explicit_target_denominator) ... ok
+test_overload_rejections_are_retained (test_pilot.PilotTests.test_overload_rejections_are_retained) ... ok
+test_result_files_do_not_overwrite_existing_case (test_pilot.PilotTests.test_result_files_do_not_overwrite_existing_case) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.500s
+
+OK

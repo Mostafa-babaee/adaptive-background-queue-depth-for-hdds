@@ -1,0 +1,116 @@
+{
+  "host": "babbage",
+  "platform": "Linux-6.8.0-106-generic-x86_64-with-glibc2.39",
+  "utc": "2026-10-18T19:18:29.955971+00:00",
+  "fixture_directory": "/home/sgf.edubear.net/mb3437s/1st milestone/mostafa_m1_k5rl5u3o",
+  "fixture_metadata": {
+    "known_size": 4194304,
+    "known_sha256": "fe4aeeb937e9c95ed5f4b760aaf3f7fe1b794322f418663d49f87af934708ce9",
+    "pattern": "milestone1-offset-pattern-v1"
+  },
+  "tests": [
+    {
+      "test": "build",
+      "status": "PASS",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "log": "/home/sgf.edubear.net/mb3437s/1st milestone/results/suite_u8pyzzi_/build.log"
+    },
+    {
+      "test": "read_first_4k",
+      "status": "PASS",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "log": "/home/sgf.edubear.net/mb3437s/1st milestone/results/suite_u8pyzzi_/read_first_4k.log"
+    },
+    {
+      "test": "read_offset_repeated",
+      "status": "PASS",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "log": "/home/sgf.edubear.net/mb3437s/1st milestone/results/suite_u8pyzzi_/read_offset_repeated.log"
+    },
+    {
+      "test": "read_256k",
+      "status": "PASS",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "log": "/home/sgf.edubear.net/mb3437s/1st milestone/results/suite_u8pyzzi_/read_256k.log"
+    },
+    {
+      "test": "read_last_4k",
+      "status": "PASS",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "log": "/home/sgf.edubear.net/mb3437s/1st milestone/results/suite_u8pyzzi_/read_last_4k.log"
+    },
+    {
+      "test": "missing_file",
+      "status": "PASS",
+      "expected_exit": 3,
+      "actual_exit": 3,
+      "log": "/home/sgf.edubear.net/mb3437s/1st milestone/results/suite_u8pyzzi_/missing_file.log"
+    },
+    {
+      "test": "directory_rejected",
+      "status": "PASS",
+      "expected_exit": 4,
+      "actual_exit": 4,
+      "log": "/home/sgf.edubear.net/mb3437s/1st milestone/results/suite_u8pyzzi_/directory_rejected.log"
+    },
+    {
+      "test": "invalid_offset",
+      "status": "PASS",
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "log": "/home/sgf.edubear.net/mb3437s/1st milestone/results/suite_u8pyzzi_/invalid_offset.log"
+    },
+    {
+      "test": "invalid_length",
+      "status": "PASS",
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "log": "/home/sgf.edubear.net/mb3437s/1st milestone/results/suite_u8pyzzi_/invalid_length.log"
+    },
+    {
+      "test": "invalid_count",
+      "status": "PASS",
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "log": "/home/sgf.edubear.net/mb3437s/1st milestone/results/suite_u8pyzzi_/invalid_count.log"
+    },
+    {
+      "test": "read_at_eof",
+      "status": "PASS",
+      "expected_exit": 7,
+      "actual_exit": 7,
+      "log": "/home/sgf.edubear.net/mb3437s/1st milestone/results/suite_u8pyzzi_/read_at_eof.log"
+    },
+    {
+      "test": "read_empty",
+      "status": "PASS",
+      "expected_exit": 7,
+      "actual_exit": 7,
+      "log": "/home/sgf.edubear.net/mb3437s/1st milestone/results/suite_u8pyzzi_/read_empty.log"
+    },
+    {
+      "test": "read_partial_last_block",
+      "status": "PASS",
+      "expected_exit": 7,
+      "actual_exit": 7,
+      "log": "/home/sgf.edubear.net/mb3437s/1st milestone/results/suite_u8pyzzi_/read_partial_last_block.log"
+    },
+    {
+      "test": "detect_corruption",
+      "status": "PASS",
+      "expected_exit": 8,
+      "actual_exit": 8,
+      "log": "/home/sgf.edubear.net/mb3437s/1st milestone/results/suite_u8pyzzi_/detect_corruption.log"
+    },
+    {
+      "test": "original_fixture_unchanged",
+      "status": "PASS"
+    }
+  ],
+  "note": "Functional checks only. No HDD placement or performance conclusion."
+}

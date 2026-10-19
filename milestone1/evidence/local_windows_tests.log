@@ -1,0 +1,22 @@
+test_empty_fixture (test_fixture.FixtureTests.test_empty_fixture) ... ok
+test_existing_file_not_overwritten (test_fixture.FixtureTests.test_existing_file_not_overwritten) ... ok
+test_file_size_content_and_digest (test_fixture.FixtureTests.test_file_size_content_and_digest) ... ok
+test_known_pattern_values (test_fixture.FixtureTests.test_known_pattern_values) ... ok
+test_negative_size_rejected (test_fixture.FixtureTests.test_negative_size_rejected) ... ok
+test_root_directory_rejected (test_fixture.FixtureTests.test_root_directory_rejected) ... ok
+test_slices_preserve_absolute_offsets (test_fixture.FixtureTests.test_slices_preserve_absolute_offsets) ... ok
+test_environment_blocker_is_not_a_pass (test_runner.OutcomeTests.test_environment_blocker_is_not_a_pass) ... BLOCKED: outcome
+ok
+test_expected_short_read_error_can_pass (test_runner.OutcomeTests.test_expected_short_read_error_can_pass) ... PASS: outcome
+ok
+test_missing_verification_marker_fails (test_runner.OutcomeTests.test_missing_verification_marker_fails) ... FAIL: outcome
+ok
+test_success_requires_expected_exit (test_runner.OutcomeTests.test_success_requires_expected_exit) ... PASS: outcome
+ok
+test_unexpected_error_fails (test_runner.OutcomeTests.test_unexpected_error_fails) ... FAIL: outcome
+ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 1.005s
+
+OK

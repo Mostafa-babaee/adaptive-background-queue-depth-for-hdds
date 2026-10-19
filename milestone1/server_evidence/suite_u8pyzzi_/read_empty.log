@@ -1,0 +1,9 @@
+command=["/home/sgf.edubear.net/mb3437s/1st milestone/build/smoke_read", "/home/sgf.edubear.net/mb3437s/1st milestone/mostafa_m1_k5rl5u3o/empty.bin"]
+expected_exit=7
+actual_exit=7
+
+backend=io_uring direct_io=requested_with_O_DIRECT file_size=0
+reported_memory_alignment=4 reported_offset_alignment=512
+request_id,offset,bytes,arrival_ns,submission_ns,completion_ns,verified
+
+SHORT_READ: expected 4096 bytes, got 0 at offset 0.

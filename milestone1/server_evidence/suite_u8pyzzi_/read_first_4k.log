@@ -1,0 +1,10 @@
+command=["/home/sgf.edubear.net/mb3437s/1st milestone/build/smoke_read", "/home/sgf.edubear.net/mb3437s/1st milestone/mostafa_m1_k5rl5u3o/known.bin", "0", "4096", "1"]
+expected_exit=0
+actual_exit=0
+
+backend=io_uring direct_io=requested_with_O_DIRECT file_size=4194304
+reported_memory_alignment=4 reported_offset_alignment=512
+request_id,offset,bytes,arrival_ns,submission_ns,completion_ns,verified
+1,0,4096,17467856503246807,17467856503250192,17467856503364261,yes
+PASS: 1 reads completed and verified. No performance conclusion.
+

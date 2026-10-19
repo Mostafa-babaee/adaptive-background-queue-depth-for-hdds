@@ -1,0 +1,6 @@
+command=["/home/sgf.edubear.net/mb3437s/1st milestone/build/smoke_read", "/home/sgf.edubear.net/mb3437s/1st milestone/mostafa_m1_k5rl5u3o/does_not_exist.bin"]
+expected_exit=3
+actual_exit=3
+
+
+lstat: No such file or directory

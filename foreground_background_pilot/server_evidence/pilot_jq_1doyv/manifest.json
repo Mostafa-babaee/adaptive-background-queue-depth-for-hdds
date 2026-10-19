@@ -1,0 +1,31 @@
+{
+  "utc": "2026-10-19T15:53:57.240055+00:00",
+  "hostname": "babbage",
+  "kernel": "6.8.0-106-generic",
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "file": "/home/sgf.edubear.net/mb3437s/1st milestone/mostafa_m1_k5rl5u3o/known.bin",
+  "file_size": 4194304,
+  "backend": "Python ThreadPoolExecutor + os.preadv + O_DIRECT",
+  "configuration": {
+    "file": "/home/sgf.edubear.net/mb3437s/1st milestone/mostafa_m1_k5rl5u3o/known.bin",
+    "seconds": 10,
+    "fg_rate": 10,
+    "foreground_limit": 1,
+    "pending_limit": 64,
+    "background_mib_s": 8,
+    "repetitions": 3,
+    "seed": 720,
+    "target_ms": null
+  },
+  "input_file_writes": false,
+  "input_file_open_mode": "O_RDONLY|O_DIRECT",
+  "limitations": [
+    "Small reused fixture; controller/drive caching remains.",
+    "Thread scheduling, Python and verification overhead affect latency.",
+    "q caps outstanding read jobs, not firmware queue depth.",
+    "Rate-limited short pilot, not the final single-HDD evaluation.",
+    "No controlled cache preparation or storage isolation."
+  ],
+  "status": "completed",
+  "foreground_trace_sha256": "35b9b4079343f89fde85dcf07cd1cd22b80dd1620fd3b335259bc20dc59f89a8"
+}

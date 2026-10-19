@@ -1,0 +1,9 @@
+command=["/home/sgf.edubear.net/mb3437s/1st milestone/build/smoke_read", "/home/sgf.edubear.net/mb3437s/1st milestone/mostafa_m1_k5rl5u3o/corrupt.bin"]
+expected_exit=8
+actual_exit=8
+
+backend=io_uring direct_io=requested_with_O_DIRECT file_size=4096
+reported_memory_alignment=4 reported_offset_alignment=512
+request_id,offset,bytes,arrival_ns,submission_ns,completion_ns,verified
+
+VERIFY_ERROR at byte 0: expected 0, got 255.
