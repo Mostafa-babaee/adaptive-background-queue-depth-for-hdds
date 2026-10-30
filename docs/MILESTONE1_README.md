@@ -1,6 +1,6 @@
 # Adaptive Background Queue Depth for HDDs
 
-CSC 720: Storage Systems â€” Project 03.
+CSC 720: Storage Systems — Project 03.
 
 We are studying how background read queue depth affects foreground latency and background throughput. The planned system uses 4 KiB random foreground reads and 256 KiB sequential background reads. Fixed depths of 1, 2, 4, and 8 will provide baselines for an adaptive controller.
 

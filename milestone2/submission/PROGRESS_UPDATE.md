@@ -1,6 +1,6 @@
 # Milestone 2 progress update
 
-Mostafa Babaei, Muhammad Ahmad Tariq, Sheryar Karim â€” CSC 720, Project 03.
+Mostafa Babaei, Muhammad Ahmad Tariq, Sheryar Karim — CSC 720, Project 03.
 
 We adopted the integrated reference dispatcher provided in Ahmad and Sheryar's handoff. It uses separate foreground and background test files, a repeatable foreground trace, two queues and one C/io_uring path. Fixed background limits are 1, 2, 4 and 8. Every returned block is checked against a file-ID and block-ID pattern.
 
