@@ -1,0 +1,4 @@
+["/home/sgf.edubear.net/mb3437s/2nd_milestone/build/dispatcher", "--file", "/home/sgf.edubear.net/mb3437s/2nd_milestone/results/suite_linux_vrf8xg2p/corrupt.bin", "--out", "/home/sgf.edubear.net/mb3437s/2nd_milestone/results/suite_linux_vrf8xg2p/corrupt", "--duration-ms", "300", "--fg-rate", "10", "--bg-mib-s", "8", "--mode", "foreground_only", "--trace", "/home/sgf.edubear.net/mb3437s/2nd_milestone/results/suite_linux_vrf8xg2p/corrupt.csv"]
+Backend: Linux io_uring + O_DIRECT
+Mode: foreground_only; q=4; outputs: /home/sgf.edubear.net/mb3437s/2nd_milestone/results/suite_linux_vrf8xg2p/corrupt
+Status: failed; FG successes=0; FG rejected=0; errors=1; accounting=OK

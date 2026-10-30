@@ -1,0 +1,3 @@
+Backend: Linux io_uring + O_DIRECT
+Mode: mixed; q=4; outputs: /home/sgf.edubear.net/mb3437s/2nd_milestone/results/demo_zulyufhh/mixed_q4
+Status: completed; FG successes=20; FG rejected=0; errors=0; accounting=OK

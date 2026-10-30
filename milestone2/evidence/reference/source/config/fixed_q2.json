@@ -1,0 +1,13 @@
+{
+  "policy": "fixed",
+  "q": 2,
+  "levels": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "window_ms": 500,
+  "target_ms": null,
+  "_note": "Fixed depth for Study A. The dispatcher logs the configured q and the ACTUAL outstanding count (bg_out_mean, bg_out_max) every window."
+}

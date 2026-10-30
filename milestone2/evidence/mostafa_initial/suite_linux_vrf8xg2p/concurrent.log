@@ -1,0 +1,4 @@
+["/home/sgf.edubear.net/mb3437s/2nd_milestone/build/dispatcher", "--file", "/home/sgf.edubear.net/mb3437s/2nd_milestone/results/suite_linux_vrf8xg2p/known.bin", "--out", "/home/sgf.edubear.net/mb3437s/2nd_milestone/results/suite_linux_vrf8xg2p/concurrent", "--duration-ms", "300", "--fg-rate", "10", "--bg-mib-s", "8", "--mode", "foreground_only", "--trace", "/home/sgf.edubear.net/mb3437s/2nd_milestone/results/suite_linux_vrf8xg2p/concurrent.csv", "--fg-limit", "2"]
+Backend: Linux io_uring + O_DIRECT
+Mode: foreground_only; q=4; outputs: /home/sgf.edubear.net/mb3437s/2nd_milestone/results/suite_linux_vrf8xg2p/concurrent
+Status: completed; FG successes=8; FG rejected=0; errors=0; accounting=OK

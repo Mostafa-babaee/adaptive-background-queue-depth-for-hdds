@@ -1,0 +1,158 @@
+nohup: ignoring input
+
+=== 10:25:27  1/7 build (Mostafa)
+cc -O2 -Wall -Wextra -std=gnu11 -I/home/sgf.edubear.net/mt6289s/local/include -o bin/smoke_test src/smoke_test.c -L/home/sgf.edubear.net/mt6289s/local/lib -Wl,-rpath,/home/sgf.edubear.net/mt6289s/local/lib -luring
+cc -O2 -Wall -Wextra -std=gnu11 -I/home/sgf.edubear.net/mt6289s/local/include -o bin/dispatcher src/dispatcher.c -L/home/sgf.edubear.net/mt6289s/local/lib -Wl,-rpath,/home/sgf.edubear.net/mt6289s/local/lib -luring
+
+=== 10:25:27  2/7 tests (Mostafa: dispatcher, Tariq: analysis + controller)
+Ran 19 tests in 0.022s
+
+OK
+Ran 10 tests in 23.215s
+
+OK
+saved results/test_results.md
+
+=== 10:25:52  3/7 disk record (Sheryar)
+# Server disk record (2026-10-30 10:25 CDT)
+
+| Item | Value |
+| --- | --- |
+| Host | babbage |
+| Test folder | /home/sgf.edubear.net/mt6289s/mt6289sproject/testdata |
+| Partition | /dev/sda1 |
+| Disk | /dev/sda |
+| Model | PERC H755 Front |
+| Size | 97.8T |
+| Rotational flag | 0 |
+| I/O scheduler | none [mq-deadline]  |
+| Device queue depth | 3840 |
+| Kernel | 6.8.0-106-generic |
+| CPUs | 128 |
+| Free space in test folder | 22G |
+| Users logged in | 53 |
+| Load (1 min) | 32.64 |
+
+Device to pass to run_study_a.py: `--device /dev/sda`
+-rw-r--r-- 1 mt6289s@sgf.edubear.net domain users@sgf.edubear.net 2147483648 Oct 19 10:45 bg.dat
+-rw-r--r-- 1 mt6289s@sgf.edubear.net domain users@sgf.edubear.net  536870912 Oct 19 10:45 fg.dat
+saved /home/sgf.edubear.net/mt6289s/M2_code_for_server/results/disk_info.md
+
+=== 10:25:52  4/7 2-minute check run (Sheryar)
+wrote /home/sgf.edubear.net/mt6289s/M2_code_for_server/traces/constant_50rps_10s_seed42.csv: 473 requests, 47.3/s over 10 s, seed 42, 131072 possible blocks
+Study A: 9 runs, about 4 minutes. Logs: /home/sgf.edubear.net/mt6289s/M2_code_for_server/logs/studyA_quick
+[1/9] 2026-10-30T10-25_mixed_q1_rep1
+   2026-10-30T10-25_mixed_q1_rep1: accepted=118548 rejected=0 submitted=118533 ok=118533 err=0 unsubmitted=15 verify_fail=0 scan=29515.0 MiB accounting=OK
+[2/9] 2026-10-30T10-25_mixed_q2_rep1
+   2026-10-30T10-25_mixed_q2_rep1: accepted=185220 rejected=0 submitted=185206 ok=185206 err=0 unsubmitted=14 verify_fail=0 scan=46183.2 MiB accounting=OK
+[3/9] 2026-10-30T10-25_mixed_q4_rep1
+   2026-10-30T10-25_mixed_q4_rep1: accepted=167909 rejected=0 submitted=167897 ok=167897 err=0 unsubmitted=12 verify_fail=0 scan=41856.0 MiB accounting=OK
+[4/9] 2026-10-30T10-25_bg_alone_q8_rep1
+   2026-10-30T10-25_bg_alone_q8_rep1: accepted=188632 rejected=0 submitted=188624 ok=188624 err=0 unsubmitted=8 verify_fail=0 scan=47156.0 MiB accounting=OK
+[5/9] 2026-10-30T10-25_bg_alone_q4_rep1
+   2026-10-30T10-25_bg_alone_q4_rep1: accepted=148868 rejected=0 submitted=148856 ok=148856 err=0 unsubmitted=12 verify_fail=0 scan=37214.0 MiB accounting=OK
+[6/9] 2026-10-30T10-25_fg_alone_rep1
+   2026-10-30T10-25_fg_alone_rep1: accepted=473 rejected=0 submitted=473 ok=473 err=0 unsubmitted=0 verify_fail=0 scan=0.0 MiB accounting=OK
+[7/9] 2026-10-30T10-25_mixed_q8_rep1
+   2026-10-30T10-25_mixed_q8_rep1: accepted=175101 rejected=0 submitted=175093 ok=175093 err=0 unsubmitted=8 verify_fail=0 scan=43655.0 MiB accounting=OK
+[8/9] 2026-10-30T10-25_bg_alone_q1_rep1
+   2026-10-30T10-25_bg_alone_q1_rep1: accepted=126048 rejected=0 submitted=126033 ok=126033 err=0 unsubmitted=15 verify_fail=0 scan=31508.2 MiB accounting=OK
+[9/9] 2026-10-30T10-25_bg_alone_q2_rep1
+   2026-10-30T10-25_bg_alone_q2_rep1: accepted=159412 rejected=0 submitted=159397 ok=159397 err=0 unsubmitted=15 verify_fail=0 scan=39849.2 MiB accounting=OK
+done: 9 OK, 0 failed
+next: python3 analysis/study_a.py /home/sgf.edubear.net/mt6289s/M2_code_for_server/logs/studyA_quick
+
+=== 10:28:07  5/7 Study A: 27 runs, about 65 minutes (Sheryar)
+wrote /home/sgf.edubear.net/mt6289s/M2_code_for_server/traces/constant_50rps_130s_seed42.csv: 6576 requests, 50.6/s over 130 s, seed 42, 131072 possible blocks
+Study A: 27 runs, about 68 minutes. Logs: /home/sgf.edubear.net/mt6289s/M2_code_for_server/logs/studyA
+[1/27] 2026-10-30T10-28_mixed_q1_rep1
+   2026-10-30T10-28_mixed_q1_rep1: accepted=1473604 rejected=0 submitted=1473589 ok=1473589 err=0 unsubmitted=15 verify_fail=0 scan=366753.2 MiB accounting=OK
+[2/27] 2026-10-30T10-28_mixed_q2_rep1
+   2026-10-30T10-28_mixed_q2_rep1: accepted=2137520 rejected=0 submitted=2137506 ok=2137506 err=0 unsubmitted=14 verify_fail=0 scan=532732.5 MiB accounting=OK
+[3/27] 2026-10-30T10-28_mixed_q4_rep1
+   2026-10-30T10-28_mixed_q4_rep1: accepted=2072956 rejected=0 submitted=2072944 ok=2072944 err=0 unsubmitted=12 verify_fail=0 scan=516592.0 MiB accounting=OK
+[4/27] 2026-10-30T10-28_bg_alone_q8_rep1
+   2026-10-30T10-28_bg_alone_q8_rep1: accepted=2745380 rejected=0 submitted=2745372 ok=2745372 err=0 unsubmitted=8 verify_fail=0 scan=686343.0 MiB accounting=OK
+[5/27] 2026-10-30T10-28_bg_alone_q4_rep1
+   2026-10-30T10-28_bg_alone_q4_rep1: accepted=2072696 rejected=0 submitted=2072684 ok=2072684 err=0 unsubmitted=12 verify_fail=0 scan=518171.0 MiB accounting=OK
+[6/27] 2026-10-30T10-28_fg_alone_rep1
+   2026-10-30T10-28_fg_alone_rep1: accepted=6576 rejected=0 submitted=6576 ok=6576 err=0 unsubmitted=0 verify_fail=0 scan=0.0 MiB accounting=OK
+[7/27] 2026-10-30T10-28_mixed_q8_rep1
+   2026-10-30T10-28_mixed_q8_rep1: accepted=2778184 rejected=0 submitted=2778176 ok=2778176 err=0 unsubmitted=8 verify_fail=0 scan=692900.0 MiB accounting=OK
+[8/27] 2026-10-30T10-28_bg_alone_q1_rep1
+   2026-10-30T10-28_bg_alone_q1_rep1: accepted=1611568 rejected=0 submitted=1611553 ok=1611553 err=0 unsubmitted=15 verify_fail=0 scan=402888.2 MiB accounting=OK
+[9/27] 2026-10-30T10-28_bg_alone_q2_rep1
+   2026-10-30T10-28_bg_alone_q2_rep1: accepted=2232192 rejected=0 submitted=2232178 ok=2232178 err=0 unsubmitted=14 verify_fail=0 scan=558044.5 MiB accounting=OK
+[10/27] 2026-10-30T10-28_mixed_q4_rep2
+   2026-10-30T10-28_mixed_q4_rep2: accepted=2060412 rejected=0 submitted=2060400 ok=2060400 err=0 unsubmitted=12 verify_fail=0 scan=513456.0 MiB accounting=OK
+[11/27] 2026-10-30T10-28_mixed_q1_rep2
+   2026-10-30T10-28_mixed_q1_rep2: accepted=1573555 rejected=0 submitted=1573540 ok=1573540 err=0 unsubmitted=15 verify_fail=0 scan=391741.0 MiB accounting=OK
+[12/27] 2026-10-30T10-28_bg_alone_q2_rep2
+   2026-10-30T10-28_bg_alone_q2_rep2: accepted=2192806 rejected=0 submitted=2192792 ok=2192792 err=0 unsubmitted=14 verify_fail=0 scan=548198.0 MiB accounting=OK
+[13/27] 2026-10-30T10-28_bg_alone_q8_rep2
+   2026-10-30T10-28_bg_alone_q8_rep2: accepted=2169616 rejected=0 submitted=2169608 ok=2169608 err=0 unsubmitted=8 verify_fail=0 scan=542402.0 MiB accounting=OK
+[14/27] 2026-10-30T10-28_mixed_q2_rep2
+   2026-10-30T10-28_mixed_q2_rep2: accepted=1886627 rejected=0 submitted=1886613 ok=1886613 err=0 unsubmitted=14 verify_fail=0 scan=470009.2 MiB accounting=OK
+[15/27] 2026-10-30T10-28_fg_alone_rep2
+   2026-10-30T10-28_fg_alone_rep2: accepted=6576 rejected=0 submitted=6576 ok=6576 err=0 unsubmitted=0 verify_fail=0 scan=0.0 MiB accounting=OK
+[16/27] 2026-10-30T10-28_mixed_q8_rep2
+   2026-10-30T10-28_mixed_q8_rep2: accepted=2172344 rejected=0 submitted=2172336 ok=2172336 err=0 unsubmitted=8 verify_fail=0 scan=541440.0 MiB accounting=OK
+[17/27] 2026-10-30T10-28_bg_alone_q1_rep2
+   2026-10-30T10-28_bg_alone_q1_rep2: accepted=1352102 rejected=0 submitted=1352087 ok=1352087 err=0 unsubmitted=15 verify_fail=0 scan=338021.8 MiB accounting=OK
+[18/27] 2026-10-30T10-28_bg_alone_q4_rep2
+   2026-10-30T10-28_bg_alone_q4_rep2: accepted=1728016 rejected=0 submitted=1728004 ok=1728004 err=0 unsubmitted=12 verify_fail=0 scan=432001.0 MiB accounting=OK
+[19/27] 2026-10-30T10-28_bg_alone_q2_rep3
+   2026-10-30T10-28_bg_alone_q2_rep3: accepted=1938851 rejected=0 submitted=1938837 ok=1938837 err=0 unsubmitted=14 verify_fail=0 scan=484709.2 MiB accounting=OK
+[20/27] 2026-10-30T10-28_bg_alone_q4_rep3
+   2026-10-30T10-28_bg_alone_q4_rep3: accepted=1785076 rejected=0 submitted=1785064 ok=1785064 err=0 unsubmitted=12 verify_fail=0 scan=446266.0 MiB accounting=OK
+[21/27] 2026-10-30T10-28_mixed_q2_rep3
+   2026-10-30T10-28_mixed_q2_rep3: accepted=1925822 rejected=0 submitted=1925808 ok=1925808 err=0 unsubmitted=14 verify_fail=0 scan=479808.0 MiB accounting=OK
+[22/27] 2026-10-30T10-28_fg_alone_rep3
+   2026-10-30T10-28_fg_alone_rep3: accepted=6576 rejected=0 submitted=6576 ok=6576 err=0 unsubmitted=0 verify_fail=0 scan=0.0 MiB accounting=OK
+[23/27] 2026-10-30T10-28_mixed_q8_rep3
+   2026-10-30T10-28_mixed_q8_rep3: accepted=2854824 rejected=0 submitted=2854816 ok=2854816 err=0 unsubmitted=8 verify_fail=0 scan=712060.0 MiB accounting=OK
+[24/27] 2026-10-30T10-28_bg_alone_q1_rep3
+   2026-10-30T10-28_bg_alone_q1_rep3: accepted=1601208 rejected=0 submitted=1601193 ok=1601193 err=0 unsubmitted=15 verify_fail=0 scan=400298.2 MiB accounting=OK
+[25/27] 2026-10-30T10-28_mixed_q1_rep3
+   2026-10-30T10-28_mixed_q1_rep3: accepted=1575132 rejected=0 submitted=1575117 ok=1575117 err=0 unsubmitted=15 verify_fail=0 scan=392135.2 MiB accounting=OK
+[26/27] 2026-10-30T10-28_bg_alone_q8_rep3
+   2026-10-30T10-28_bg_alone_q8_rep3: accepted=2751496 rejected=0 submitted=2751488 ok=2751488 err=0 unsubmitted=8 verify_fail=0 scan=687872.0 MiB accounting=OK
+[27/27] 2026-10-30T10-28_mixed_q4_rep3
+   2026-10-30T10-28_mixed_q4_rep3: accepted=2034308 rejected=0 submitted=2034296 ok=2034296 err=0 unsubmitted=12 verify_fail=0 scan=506930.0 MiB accounting=OK
+done: 27 OK, 0 failed
+next: python3 analysis/study_a.py /home/sgf.edubear.net/mt6289s/M2_code_for_server/logs/studyA
+
+=== 11:28:55  6/7 analysis and frozen target (Tariq)
+froze settings in /home/sgf.edubear.net/mt6289s/M2_code_for_server/config/adaptive.json
+# Study A results (fixed-depth baselines)
+
+Logs: `logs/studyA`. Runs: 27. Warm-up dropped. Values are mean ± sd over repetitions.
+
+Integrity: 27 of 27 runs clean (accounting OK, 0 errors, all bytes verified, O_DIRECT).
+
+| Run type | q | reps | FG p50 ms | FG p99 ms | wait p99 ms | service p99 ms | miss % | scan MiB/s | actual depth | rejected |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| scanner alone | 1 | 3 | – | – ± – | – | – | – | 2931.9 ± 286.5 | 0.69 | 0 |
+| scanner alone | 2 | 3 | – | – ± – | – | – | – | 4078.2 ± 298.3 | 1.34 | 0 |
+| scanner alone | 4 | 3 | – | – ± – | – | – | – | 3584.4 ± 353.6 | 3.03 | 0 |
+| scanner alone | 8 | 3 | – | – ± – | – | – | – | 4914.3 ± 646.8 | 5.97 | 0 |
+| foreground alone | – | 3 | 0.22 | 0.58 ± 0.21 | 0.21 | 0.27 | 1.0 | 0.0 ± 0.0 | 0.00 | 0 |
+| combined | 1 | 3 | 0.15 | 0.35 ± 0.02 | 0.15 | 0.21 | 0.2 | 2949.7 ± 112.6 | 0.72 | 0 |
+| combined | 2 | 3 | 0.21 | 0.60 ± 0.05 | 0.21 | 0.42 | 2.2 | 3801.5 ± 256.7 | 1.30 | 0 |
+| combined | 4 | 3 | 0.28 | 1.01 ± 0.05 | 0.40 | 0.66 | 7.1 | 3939.9 ± 57.9 | 3.20 | 0 |
+| combined | 8 | 3 | 0.38 | 1.27 ± 0.16 | 0.67 | 0.68 | 22.9 | 5001.0 ± 718.9 | 5.98 | 0 |
+
+## Frozen latency target and controller settings
+
+- **target_ms = 0.5** (1.25 × mean p99 of the combined run at q = 1, rounded up to 0.5 ms)
+- window_ms = 1000, min_samples = 25 (a window holds about twice min_samples at the trace rate, so quiet windows are not sparse)
+- miss_high = 0.05, miss_low = 0.01, up_windows = 3
+
+Figures: `studyA_tradeoff.png` (required), `studyA_scan_throughput.png`, `studyA_latency_cdf.png`, `studyA_actual_depth.png`.
+
+outputs in /home/sgf.edubear.net/mt6289s/M2_code_for_server/results/studyA
+
+=== 11:30:15  7/7 progress update (team)
+saved /home/sgf.edubear.net/mt6289s/M2_code_for_server/results/progress_update_m2.md
+
+ALL DONE 11:30:16. Results are in results/ (send this folder). Raw logs are in logs/studyA.

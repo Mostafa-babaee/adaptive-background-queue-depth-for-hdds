@@ -1,0 +1,39 @@
+{
+  "host": "babbage",
+  "kernel": "6.8.0-106-generic",
+  "python": "3.12.3",
+  "platform": "Linux",
+  "implementation": "team-reference-integrated-revised",
+  "status": "passed",
+  "python_test_counts": {
+    "analysis_tests.log": 36,
+    "dispatcher_tests.log": 15
+  },
+  "C_submission_scenarios": 8,
+  "source_sha256": {
+    "src/smoke_test.c": "ad965287a5ac803daab104ec5b62c50e226257436a9a2622d6a05276b981605b",
+    "src/dispatcher.c": "0ba2aff2ac508fc782e38d087a9591f21f4cd66d4ffde398414ac898b15e0a29",
+    "src/submission.h": "95fd3a8aef3dc702f1f2c5cdbab0de180d98498a615ff5f3a822f4e977593963",
+    "src/dispatcher.h": "15c340efa44028ad49250adca98f5504d56887894b1639785294fdffe1b10f53",
+    "analysis/test_validation.py": "97057677fb86ebd9e45538ed4395701d1d36edc449412271287fbc0c575b6fb8",
+    "analysis/study_a.py": "859881b06c7a6c480f521c437473bfa7e4deedff9b59ac6c65246d6aae3b64c6",
+    "analysis/validate_logs.py": "3081de769a1882003b50ad48fc909a4ddbd16bab8927eb75826ac30cc1a79042",
+    "analysis/test_tools.py": "b94ebfdb7b45f0cde11089881ac42417c3fa87f9dac0ab2c08406b2776b87b7e",
+    "analysis/make_progress_update.py": "f7a53f604990513c31336cc8cf1bb3d94c179dd84f1a34b22701859feed102c5",
+    "analysis/test_study_a.py": "8489dd7ddef0f05a2e4d719c33a98c878620f25e0d8b3e283d41441c729fb8f4",
+    "analysis/controller.py": "0611ed72eb3714f706883e806a85be2b3e0b86e9424dd695d53fb57ade5e46e3",
+    "analysis/test_controller.py": "294644a26bb712b6f38810e950208a4d66529bbd840b7cfb7804f77e72f9fd0c",
+    "tests/test_dispatcher.py": "8c93a70ce9ec82720e4337082822c8e1a244323bce8f8881bbf263614e8969b4",
+    "tests/test_submission.c": "7d2f66f478fee06f1606a3f141e70716840189466da0d046adc41f1d1f22aaa0",
+    "tools/make_trace.py": "e5c8ff61b264451b6a943455b2c3f810bfa74c57c2540daa76cf3a9ca624c046",
+    "tools/check_reference.py": "09f43e0463cafcb426e7ed650830a9d3d930264ae461f43c0bf77d884c5368d4",
+    "tools/write_validation.py": "909852417812d2a7c383aa028f4a421a564570ebb7f3371013219a2970cd0abb",
+    "tools/make_testfiles.py": "d3c295a291b9754e950461af23ed2ae6ba34d2de892adf06836960a038c52086"
+  },
+  "performance_claim": false,
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "2.3.3",
+    "matplotlib": "3.11.2"
+  }
+}

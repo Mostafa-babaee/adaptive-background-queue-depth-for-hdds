@@ -1,0 +1,17 @@
+{
+  "platform": "Windows",
+  "Python_tests_passed": 36,
+  "C_submission_scenarios_passed": 8,
+  "production_Linux_dispatcher_validation": "pending Babbage",
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.0.1",
+    "matplotlib": "3.11.2"
+  },
+  "source_sha256": {
+    "src\\dispatcher.c": "0ba2aff2ac508fc782e38d087a9591f21f4cd66d4ffde398414ac898b15e0a29",
+    "src\\dispatcher.h": "15c340efa44028ad49250adca98f5504d56887894b1639785294fdffe1b10f53",
+    "src\\smoke_test.c": "ad965287a5ac803daab104ec5b62c50e226257436a9a2622d6a05276b981605b",
+    "src\\submission.h": "95fd3a8aef3dc702f1f2c5cdbab0de180d98498a615ff5f3a822f4e977593963"
+  }
+}

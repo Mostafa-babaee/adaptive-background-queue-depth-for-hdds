@@ -1,0 +1,2 @@
+["/home/sgf.edubear.net/mb3437s/2nd_milestone/build/dispatcher", "--file", "/home/sgf.edubear.net/mb3437s/2nd_milestone/results/suite_linux_vrf8xg2p/known.bin", "--out", "/home/sgf.edubear.net/mb3437s/2nd_milestone/results/suite_linux_vrf8xg2p/unaligned", "--duration-ms", "300", "--fg-rate", "10", "--bg-mib-s", "8", "--trace", "/home/sgf.edubear.net/mb3437s/2nd_milestone/results/suite_linux_vrf8xg2p/unaligned.csv"]
+Invalid trace or excessive request count.

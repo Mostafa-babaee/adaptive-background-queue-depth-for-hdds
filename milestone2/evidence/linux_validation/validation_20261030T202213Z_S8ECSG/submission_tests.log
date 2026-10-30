@@ -1,0 +1,3 @@
+cc -O2 -Wall -Wextra -Werror -std=gnu11 -I/home/sgf.edubear.net/mb3437s/.local/m1-liburing-2.5/include -Isrc -o bin/test_submission tests/test_submission.c
+./bin/test_submission
+PASS: 8 submission-batch scenarios

@@ -1,0 +1,12 @@
+{
+  "policy": "adaptive_nodamp",
+  "levels": [1, 2, 4, 8],
+  "q_start": 1,
+  "window_ms": 500,
+  "min_samples": 50,
+  "target_ms": null,
+  "miss_high": 0.05,
+  "miss_low": 0.01,
+  "up_windows": 1,
+  "_note": "Ablation: identical except no multi-window increase rule"
+}

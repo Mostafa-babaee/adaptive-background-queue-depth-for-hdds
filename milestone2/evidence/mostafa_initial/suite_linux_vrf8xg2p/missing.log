@@ -1,0 +1,3 @@
+["/home/sgf.edubear.net/mb3437s/2nd_milestone/build/dispatcher", "--file", "/home/sgf.edubear.net/mb3437s/2nd_milestone/results/suite_linux_vrf8xg2p/not_here.bin", "--out", "/home/sgf.edubear.net/mb3437s/2nd_milestone/results/suite_linux_vrf8xg2p/missing", "--duration-ms", "300", "--fg-rate", "10", "--bg-mib-s", "8"]
+Use an existing regular file, not a symlink or device.
+Backend/file setup failed.

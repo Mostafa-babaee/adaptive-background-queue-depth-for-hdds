@@ -1,0 +1,2 @@
+["/home/sgf.edubear.net/mb3437s/2nd_milestone/build/dispatcher", "--file", "/home/sgf.edubear.net/mb3437s/2nd_milestone/results/suite_linux_vrf8xg2p/partial.bin", "--out", "/home/sgf.edubear.net/mb3437s/2nd_milestone/results/suite_linux_vrf8xg2p/partial", "--duration-ms", "300", "--fg-rate", "10", "--bg-mib-s", "8"]
+Use a known-pattern file of at least 256 KiB, with 4 KiB alignment.

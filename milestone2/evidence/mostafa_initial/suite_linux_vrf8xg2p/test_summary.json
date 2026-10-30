@@ -1,0 +1,22 @@
+{
+  "backend": "Linux io_uring direct reads",
+  "tests_run": 19,
+  "skipped": [
+    [
+      "test_background_concurrency_reaches_each_limit (__main__.DispatcherTests.test_background_concurrency_reaches_each_limit)",
+      "Uncapped saturation probe is limited to the fake backend on this shared-server suite"
+    ],
+    [
+      "test_injected_read_error_not_success (__main__.DispatcherTests.test_injected_read_error_not_success)",
+      "Injected device errors use fake backend; no destructive device fault injection"
+    ],
+    [
+      "test_interrupt_drains_submitted_and_marks_pending (__main__.DispatcherTests.test_interrupt_drains_submitted_and_marks_pending)",
+      "Deterministic in-flight injection belongs to the fake-backend run; see real SIGINT test"
+    ]
+  ],
+  "failures": [],
+  "errors": [],
+  "success": true,
+  "performance_claim": false
+}

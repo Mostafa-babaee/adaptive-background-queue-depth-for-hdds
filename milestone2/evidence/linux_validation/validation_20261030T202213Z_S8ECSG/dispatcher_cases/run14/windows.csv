@@ -1,0 +1,3 @@
+win_idx,t_start,t_end,q_config,bg_out_max,bg_out_mean,fg_pending_len,bg_pending_len,fg_samples,fg_misses,miss_frac,action,streak,scan_bytes_total,rejected_total,ctrl_cpu_ns
+0,0,250000000,8,8,6.2027,0,8,49,,,HOLD,0,1403416576,0,1142
+1,250000000,400111660,8,8,6.0851,0,0,30,,,HOLD,0,2217660416,0,878

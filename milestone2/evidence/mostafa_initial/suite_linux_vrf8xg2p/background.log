@@ -1,0 +1,4 @@
+["/home/sgf.edubear.net/mb3437s/2nd_milestone/build/dispatcher", "--file", "/home/sgf.edubear.net/mb3437s/2nd_milestone/results/suite_linux_vrf8xg2p/known.bin", "--out", "/home/sgf.edubear.net/mb3437s/2nd_milestone/results/suite_linux_vrf8xg2p/background", "--duration-ms", "300", "--fg-rate", "10", "--bg-mib-s", "8", "--mode", "background_only"]
+Backend: Linux io_uring + O_DIRECT
+Mode: background_only; q=4; outputs: /home/sgf.edubear.net/mb3437s/2nd_milestone/results/suite_linux_vrf8xg2p/background
+Status: completed; FG successes=0; FG rejected=0; errors=0; accounting=OK

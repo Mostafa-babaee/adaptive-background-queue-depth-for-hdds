@@ -1,0 +1,36 @@
+{
+  "utc": "2026-10-24T20:38:44.021929+00:00",
+  "purpose": "Functional demonstration, not final HDD performance",
+  "cases": [
+    {
+      "case": "foreground_only_q1",
+      "outcome": "PASS",
+      "exit_code": 0
+    },
+    {
+      "case": "mixed_q1",
+      "outcome": "PASS",
+      "exit_code": 0
+    },
+    {
+      "case": "mixed_q2",
+      "outcome": "PASS",
+      "exit_code": 0
+    },
+    {
+      "case": "mixed_q4",
+      "outcome": "PASS",
+      "exit_code": 0
+    },
+    {
+      "case": "mixed_q8",
+      "outcome": "PASS",
+      "exit_code": 0
+    },
+    {
+      "case": "background_only_q1",
+      "outcome": "PASS",
+      "exit_code": 0
+    }
+  ]
+}

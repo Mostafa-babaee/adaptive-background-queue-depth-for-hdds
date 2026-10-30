@@ -1,0 +1,24 @@
+{
+  "outer_zip": {
+    "name": "M2_handoff_for_Mostafa.zip",
+    "bytes": 935176492,
+    "sha256": "51e4e0a79e521f7e1977849e1bae16c02bf3931616caa01c16c974a5f99523b2"
+  },
+  "nested_bundle": {
+    "name": "studyA_bundle_2026-10-30.tar.gz",
+    "sha256": "29c3f1f5d12446e420713a8f131656949c5ec5df075dc01334716ba0851943af",
+    "matched": true
+  },
+  "available_original_manifest_entries_matched": 26,
+  "intentionally_absent_original_binary": "bin/dispatcher",
+  "original_dispatcher_source_sha256": "f514bdcba3dcffce5d8750d1bf1e47817a1faf6b68efadf68a060018fbe347fd",
+  "raw_request_files": 27,
+  "metadata_files": 27,
+  "window_files": 27,
+  "request_records_checked": 48746023,
+  "published_metric_values_recomputed": 459,
+  "trace_requests_per_foreground_run": 6576,
+  "queued_background_unsubmitted_at_normal_shutdown": 294,
+  "rejected_requests": 0,
+  "unexpected_errors": 0
+}

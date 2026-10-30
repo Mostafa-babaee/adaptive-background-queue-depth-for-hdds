@@ -1,0 +1,21 @@
+test_bad_arguments (test_dispatcher.DispatcherTests.test_bad_arguments) ... ok
+test_corrupted_data_detected (test_dispatcher.DispatcherTests.test_corrupted_data_detected) ... ok
+test_end_of_file (test_dispatcher.DispatcherTests.test_end_of_file) ... ok
+test_existing_results_preserved (test_dispatcher.DispatcherTests.test_existing_results_preserved) ... ok
+test_full_queue_rejects (test_dispatcher.DispatcherTests.test_full_queue_rejects) ... ok
+test_invalid_numeric_and_policy_arguments (test_dispatcher.DispatcherTests.test_invalid_numeric_and_policy_arguments) ... ok
+test_malformed_trace_rejected (test_dispatcher.DispatcherTests.test_malformed_trace_rejected) ... ok
+test_normal_end_drains_and_keeps_due_arrivals (test_dispatcher.DispatcherTests.test_normal_end_drains_and_keeps_due_arrivals) ... ok
+test_q_and_quota_limits (test_dispatcher.DispatcherTests.test_q_and_quota_limits) ... ok
+test_read_error_logged (test_dispatcher.DispatcherTests.test_read_error_logged) ... ok
+test_same_trace_same_requests (test_dispatcher.DispatcherTests.test_same_trace_same_requests) ... ok
+test_shutdown_ctrl_c (test_dispatcher.DispatcherTests.test_shutdown_ctrl_c) ... ok
+test_shutdown_early_stop (test_dispatcher.DispatcherTests.test_shutdown_early_stop) ... ok
+test_symlink_input_rejected (test_dispatcher.DispatcherTests.test_symlink_input_rejected) ... ok
+test_verified_contents (test_dispatcher.DispatcherTests.test_verified_contents) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 24.964s
+
+OK
+Retained dispatcher evidence: /home/sgf.edubear.net/mb3437s/milestone2_integrated/results/validation_20261030T202213Z_S8ECSG/dispatcher_cases

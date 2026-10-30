@@ -1,0 +1,3 @@
+req_id,class,offset,len,t_arrival,t_submit,t_complete,status,errno,verified,q_at_submit,bg_out_at_submit,fg_out_at_submit,bytes_read,t_admit,t_verify
+0,FG,8384512,4096,1000000,1064196,1557428,OK,0,1,4,0,0,4096,1063684,1558216
+1,FG,8388608,4096,2000000,2056011,2058335,ERR,5,0,4,0,0,0,2055878,2058432

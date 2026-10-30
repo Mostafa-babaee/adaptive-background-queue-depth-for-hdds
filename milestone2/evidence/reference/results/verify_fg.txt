@@ -1,0 +1,1 @@
+OK: /home/sgf.edubear.net/mt6289s/mt6289sproject/testdata/fg.dat (131072 blocks, file_id=1) matches the pattern

@@ -1,0 +1,43 @@
+created C:\Users\babae\OneDrive\Desktop\Storage_systems\milestone2_integrated\results\tmpb88_hpi8\fixture.dat: 1 MiB, 256 blocks, file_id=1, 0.0 s
+OK: C:\Users\babae\OneDrive\Desktop\Storage_systems\milestone2_integrated\results\tmpb88_hpi8\fixture.dat (256 blocks, file_id=1) matches the pattern
+test_ablation_steps_up_every_good_window (test_controller.TestAdaptive.test_ablation_steps_up_every_good_window) ... ok
+test_bad_config_rejected (test_controller.TestAdaptive.test_bad_config_rejected) ... ok
+test_config_file_loads (test_controller.TestAdaptive.test_config_file_loads) ... ok
+test_exact_threshold_boundaries (test_controller.TestAdaptive.test_exact_threshold_boundaries) ... ok
+test_middle_window_resets_streak (test_controller.TestAdaptive.test_middle_window_resets_streak) ... ok
+test_needs_three_good_windows_to_step_up (test_controller.TestAdaptive.test_needs_three_good_windows_to_step_up) ... ok
+test_never_above_max (test_controller.TestAdaptive.test_never_above_max) ... ok
+test_never_below_one (test_controller.TestAdaptive.test_never_below_one) ... ok
+test_not_scanning_holds (test_controller.TestAdaptive.test_not_scanning_holds) ... ok
+test_q_always_allowed_value (test_controller.TestAdaptive.test_q_always_allowed_value) ... ok
+test_sparse_window_holds (test_controller.TestAdaptive.test_sparse_window_holds) ... ok
+test_sparse_window_keeps_streak (test_controller.TestAdaptive.test_sparse_window_keeps_streak) ... ok
+test_starts_at_q_start (test_controller.TestAdaptive.test_starts_at_q_start) ... ok
+test_step_down_on_misses (test_controller.TestAdaptive.test_step_down_on_misses) ... ok
+test_never_changes (test_controller.TestFixed.test_never_changes) ... ok
+test_rejects_bad_q (test_controller.TestFixed.test_rejects_bad_q) ... ok
+test_choose_target_rule (test_study_a.StudyATests.test_choose_target_rule) ... ok
+test_metrics (test_study_a.StudyATests.test_metrics) ... ok
+test_no_target_gives_nan_miss (test_study_a.StudyATests.test_no_target_gives_nan_miss) ... ok
+test_existing_fixture_not_replaced (test_tools.ToolTests.test_existing_fixture_not_replaced) ... ok
+test_generator_handles_partial_writes (test_tools.ToolTests.test_generator_handles_partial_writes) ... ok
+test_invalid_fixture_size (test_tools.ToolTests.test_invalid_fixture_size) ... ok
+test_trace_repeatability_and_exclusive_output (test_tools.ToolTests.test_trace_repeatability_and_exclusive_output) ... ok
+test_actual_tail_bytes_used_by_metrics (test_validation.ValidationTests.test_actual_tail_bytes_used_by_metrics) ... ok
+test_duplicate_id_rejected (test_validation.ValidationTests.test_duplicate_id_rejected) ... ok
+test_duplicate_repetition (test_validation.ValidationTests.test_duplicate_repetition) ... ok
+test_early_end_rejected (test_validation.ValidationTests.test_early_end_rejected) ... ok
+test_full_dataset_and_missing_repetition (test_validation.ValidationTests.test_full_dataset_and_missing_repetition) ... ok
+test_inconsistent_counters_rejected (test_validation.ValidationTests.test_inconsistent_counters_rejected) ... ok
+test_interrupt_rejected (test_validation.ValidationTests.test_interrupt_rejected) ... ok
+test_invalid_run_excluded_before_summary (test_validation.ValidationTests.test_invalid_run_excluded_before_summary) ... ok
+test_legacy_tail_ambiguity_rejected (test_validation.ValidationTests.test_legacy_tail_ambiguity_rejected) ... ok
+test_missing_direct_flag_rejected (test_validation.ValidationTests.test_missing_direct_flag_rejected) ... ok
+test_missing_trace_rejected (test_validation.ValidationTests.test_missing_trace_rejected) ... ok
+test_valid_run (test_validation.ValidationTests.test_valid_run) ... ok
+test_wrong_trace_rejected (test_validation.ValidationTests.test_wrong_trace_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 36 tests in 1.615s
+
+OK

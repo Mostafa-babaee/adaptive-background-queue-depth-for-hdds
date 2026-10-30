@@ -1,0 +1,17 @@
+{
+  "aggregate_arithmetic": "consistent",
+  "runs": 27,
+  "groups": 9,
+  "checked_values": 162,
+  "raw_request_measurements_verified": false,
+  "platform": "Babbage shared RAID",
+  "implementation": "original supplied reference snapshot",
+  "provisional_target": {
+    "target_ms": 0.5,
+    "window_ms": 1000,
+    "min_samples": 25,
+    "miss_high": 0.05,
+    "miss_low": 0.01,
+    "up_windows": 3
+  }
+}
