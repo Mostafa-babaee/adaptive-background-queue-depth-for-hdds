@@ -1,0 +1,17 @@
+{
+  "policy": "adaptive_nodamp",
+  "levels": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "q_start": 1,
+  "window_ms": 1000,
+  "min_samples": 25,
+  "target_ms": 0.5,
+  "miss_high": 0.05,
+  "miss_low": 0.01,
+  "up_windows": 1,
+  "_note": "Provisional setting from reference Babbage RAID Study A; not a physical-HDD calibration."
+}

@@ -1,0 +1,523 @@
+{
+  "stamp": "20261112T171109Z_a98ce9",
+  "workload": {
+    "fg_file": "fg.dat",
+    "fg_file_id": 1,
+    "fg_file_mib": 512,
+    "bg_file": "bg.dat",
+    "bg_file_id": 2,
+    "bg_file_mib": 2048,
+    "fg_req_bytes": 4096,
+    "chunk_bytes": 262144,
+    "bg_start_offset": 0,
+    "fg_rate": 50,
+    "trace_seed": 42,
+    "fg_quota": 4,
+    "fg_queue_cap": 256,
+    "bg_queue_cap": 16,
+    "window_ms": 500,
+    "warmup_s": 10,
+    "duration_s": 120,
+    "repetitions": 3,
+    "cache_flush_mib": 512,
+    "cpu": 1,
+    "target_ms": null,
+    "_note": "Same for every policy and run. Runs on babbage (the course server, same disk and test folder as Milestone 1: ~/mt6289sproject/testdata with fg.dat 512 MiB and bg.dat 2 GiB). /home is shared and has about 20 GB free, so the Milestone 1 test files are reused."
+  },
+  "studies": {
+    "_note": "Milestone 3 Study B and Study C on babbage, the course server (the only platform used). Same workload settings as Milestone 2 (config/workload.json) except: window_ms 1000 and target_ms 0.5 for EVERY policy, so fixed and adaptive runs count misses the same way. Traces start at t = 0 (warm-up included) and are reused by every policy and repetition.",
+    "target_ms": 0.5,
+    "window_ms": 1000,
+    "traces": {
+      "constant": {
+        "rate": 50,
+        "seed": 45,
+        "_note": "same rate as Milestone 2, NEW seed: the Milestone 2 trace (seed 42) was used to tune the target, so evaluation uses a separate trace (plan: tuning runs kept separate from final evaluation runs)"
+      },
+      "alternating": {
+        "rate": 50,
+        "busy_rate": 200,
+        "phase_s": 20,
+        "seed": 43,
+        "_note": "20 s quiet (50/s), 20 s busy (200/s), repeating, quiet first"
+      },
+      "overload": {
+        "rate": 2000,
+        "seed": 44,
+        "_note": "demanding overload case (Study C)"
+      }
+    },
+    "studies": {
+      "B": {
+        "traces": [
+          "constant",
+          "alternating"
+        ],
+        "policies": [
+          "fixed:1",
+          "fixed:2",
+          "fixed:4",
+          "fixed:8",
+          "adaptive",
+          "adaptive_nodamp"
+        ],
+        "reps": 3,
+        "chunk_bytes": 262144
+      },
+      "C_overload": {
+        "traces": [
+          "overload"
+        ],
+        "policies": [
+          "fixed:1",
+          "fixed:2",
+          "fixed:4",
+          "fixed:8",
+          "adaptive"
+        ],
+        "reps": 2,
+        "chunk_bytes": 262144
+      },
+      "C_chunk1m": {
+        "traces": [
+          "alternating"
+        ],
+        "policies": [
+          "fixed:1",
+          "fixed:2",
+          "fixed:4",
+          "fixed:8",
+          "adaptive"
+        ],
+        "reps": 2,
+        "chunk_bytes": 1048576
+      }
+    },
+    "quick": {
+      "warmup_s": 2,
+      "duration_s": 8,
+      "cache_flush_mib": 64,
+      "runs": [
+        [
+          "B",
+          "alternating",
+          "fixed:1"
+        ],
+        [
+          "B",
+          "alternating",
+          "fixed:8"
+        ],
+        [
+          "B",
+          "alternating",
+          "adaptive"
+        ],
+        [
+          "B",
+          "alternating",
+          "adaptive_nodamp"
+        ],
+        [
+          "C_overload",
+          "overload",
+          "adaptive"
+        ],
+        [
+          "C_chunk1m",
+          "alternating",
+          "adaptive"
+        ]
+      ]
+    }
+  },
+  "order": [
+    {
+      "study": "B",
+      "trace": "constant",
+      "policy": "fixed:2",
+      "rep": 1
+    },
+    {
+      "study": "B",
+      "trace": "alternating",
+      "policy": "fixed:2",
+      "rep": 1
+    },
+    {
+      "study": "B",
+      "trace": "alternating",
+      "policy": "adaptive",
+      "rep": 1
+    },
+    {
+      "study": "B",
+      "trace": "constant",
+      "policy": "fixed:1",
+      "rep": 1
+    },
+    {
+      "study": "B",
+      "trace": "alternating",
+      "policy": "fixed:1",
+      "rep": 1
+    },
+    {
+      "study": "B",
+      "trace": "alternating",
+      "policy": "adaptive_nodamp",
+      "rep": 1
+    },
+    {
+      "study": "B",
+      "trace": "constant",
+      "policy": "adaptive",
+      "rep": 1
+    },
+    {
+      "study": "B",
+      "trace": "constant",
+      "policy": "adaptive_nodamp",
+      "rep": 1
+    },
+    {
+      "study": "B",
+      "trace": "constant",
+      "policy": "fixed:4",
+      "rep": 1
+    },
+    {
+      "study": "B",
+      "trace": "alternating",
+      "policy": "fixed:4",
+      "rep": 1
+    },
+    {
+      "study": "B",
+      "trace": "alternating",
+      "policy": "fixed:8",
+      "rep": 1
+    },
+    {
+      "study": "B",
+      "trace": "constant",
+      "policy": "fixed:8",
+      "rep": 1
+    },
+    {
+      "study": "B",
+      "trace": "constant",
+      "policy": "fixed:4",
+      "rep": 2
+    },
+    {
+      "study": "B",
+      "trace": "constant",
+      "policy": "fixed:1",
+      "rep": 2
+    },
+    {
+      "study": "B",
+      "trace": "constant",
+      "policy": "fixed:2",
+      "rep": 2
+    },
+    {
+      "study": "B",
+      "trace": "alternating",
+      "policy": "fixed:1",
+      "rep": 2
+    },
+    {
+      "study": "B",
+      "trace": "alternating",
+      "policy": "adaptive",
+      "rep": 2
+    },
+    {
+      "study": "B",
+      "trace": "alternating",
+      "policy": "adaptive_nodamp",
+      "rep": 2
+    },
+    {
+      "study": "B",
+      "trace": "constant",
+      "policy": "adaptive_nodamp",
+      "rep": 2
+    },
+    {
+      "study": "B",
+      "trace": "alternating",
+      "policy": "fixed:8",
+      "rep": 2
+    },
+    {
+      "study": "B",
+      "trace": "constant",
+      "policy": "fixed:8",
+      "rep": 2
+    },
+    {
+      "study": "B",
+      "trace": "alternating",
+      "policy": "fixed:4",
+      "rep": 2
+    },
+    {
+      "study": "B",
+      "trace": "constant",
+      "policy": "adaptive",
+      "rep": 2
+    },
+    {
+      "study": "B",
+      "trace": "alternating",
+      "policy": "fixed:2",
+      "rep": 2
+    },
+    {
+      "study": "B",
+      "trace": "alternating",
+      "policy": "adaptive_nodamp",
+      "rep": 3
+    },
+    {
+      "study": "B",
+      "trace": "constant",
+      "policy": "adaptive",
+      "rep": 3
+    },
+    {
+      "study": "B",
+      "trace": "alternating",
+      "policy": "fixed:8",
+      "rep": 3
+    },
+    {
+      "study": "B",
+      "trace": "constant",
+      "policy": "fixed:2",
+      "rep": 3
+    },
+    {
+      "study": "B",
+      "trace": "alternating",
+      "policy": "fixed:2",
+      "rep": 3
+    },
+    {
+      "study": "B",
+      "trace": "constant",
+      "policy": "fixed:1",
+      "rep": 3
+    },
+    {
+      "study": "B",
+      "trace": "constant",
+      "policy": "adaptive_nodamp",
+      "rep": 3
+    },
+    {
+      "study": "B",
+      "trace": "alternating",
+      "policy": "fixed:1",
+      "rep": 3
+    },
+    {
+      "study": "B",
+      "trace": "alternating",
+      "policy": "fixed:4",
+      "rep": 3
+    },
+    {
+      "study": "B",
+      "trace": "constant",
+      "policy": "fixed:4",
+      "rep": 3
+    },
+    {
+      "study": "B",
+      "trace": "alternating",
+      "policy": "adaptive",
+      "rep": 3
+    },
+    {
+      "study": "B",
+      "trace": "constant",
+      "policy": "fixed:8",
+      "rep": 3
+    },
+    {
+      "study": "C_overload",
+      "trace": "overload",
+      "policy": "fixed:8",
+      "rep": 1
+    },
+    {
+      "study": "C_overload",
+      "trace": "overload",
+      "policy": "adaptive",
+      "rep": 1
+    },
+    {
+      "study": "C_overload",
+      "trace": "overload",
+      "policy": "fixed:2",
+      "rep": 1
+    },
+    {
+      "study": "C_overload",
+      "trace": "overload",
+      "policy": "fixed:1",
+      "rep": 1
+    },
+    {
+      "study": "C_overload",
+      "trace": "overload",
+      "policy": "fixed:4",
+      "rep": 1
+    },
+    {
+      "study": "C_overload",
+      "trace": "overload",
+      "policy": "fixed:1",
+      "rep": 2
+    },
+    {
+      "study": "C_overload",
+      "trace": "overload",
+      "policy": "fixed:2",
+      "rep": 2
+    },
+    {
+      "study": "C_overload",
+      "trace": "overload",
+      "policy": "fixed:4",
+      "rep": 2
+    },
+    {
+      "study": "C_overload",
+      "trace": "overload",
+      "policy": "fixed:8",
+      "rep": 2
+    },
+    {
+      "study": "C_overload",
+      "trace": "overload",
+      "policy": "adaptive",
+      "rep": 2
+    },
+    {
+      "study": "C_chunk1m",
+      "trace": "alternating",
+      "policy": "fixed:4",
+      "rep": 1
+    },
+    {
+      "study": "C_chunk1m",
+      "trace": "alternating",
+      "policy": "fixed:2",
+      "rep": 1
+    },
+    {
+      "study": "C_chunk1m",
+      "trace": "alternating",
+      "policy": "fixed:1",
+      "rep": 1
+    },
+    {
+      "study": "C_chunk1m",
+      "trace": "alternating",
+      "policy": "adaptive",
+      "rep": 1
+    },
+    {
+      "study": "C_chunk1m",
+      "trace": "alternating",
+      "policy": "fixed:8",
+      "rep": 1
+    },
+    {
+      "study": "C_chunk1m",
+      "trace": "alternating",
+      "policy": "fixed:4",
+      "rep": 2
+    },
+    {
+      "study": "C_chunk1m",
+      "trace": "alternating",
+      "policy": "fixed:2",
+      "rep": 2
+    },
+    {
+      "study": "C_chunk1m",
+      "trace": "alternating",
+      "policy": "fixed:8",
+      "rep": 2
+    },
+    {
+      "study": "C_chunk1m",
+      "trace": "alternating",
+      "policy": "adaptive",
+      "rep": 2
+    },
+    {
+      "study": "C_chunk1m",
+      "trace": "alternating",
+      "policy": "fixed:1",
+      "rep": 2
+    }
+  ],
+  "git_commit": "unknown",
+  "traces": {
+    "constant": "constant_50rps_130s_seed45.csv",
+    "alternating": "alternating_50-200rps_20s_130s_seed43.csv",
+    "overload": "constant_2000rps_130s_seed44.csv"
+  },
+  "trace_sha256": {
+    "constant": "ddd29b103ae543cc8e612ab142efdb25fb23bd0deaa19910022cf6df61ebdff8",
+    "alternating": "29ef85c909b622db245d2786dc115f9e4c6de264dccf04995b3bb6f04e015895",
+    "overload": "a19c2713a497c5964c4ac1e7087d940c48fdd2fd10847c281a40ef7a262e163d"
+  },
+  "dispatcher_sha256": "588556479e1c2c824b3ec0540fcf86882ae43952f54660ddb1d0423c3a377221",
+  "controller_configs": {
+    "adaptive": {
+      "policy": "adaptive",
+      "levels": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "q_start": 1,
+      "window_ms": 1000,
+      "min_samples": 25,
+      "target_ms": 0.5,
+      "miss_high": 0.05,
+      "miss_low": 0.01,
+      "up_windows": 3,
+      "_note": "Provisional setting from reference Babbage RAID Study A; not a physical-HDD calibration."
+    },
+    "adaptive_nodamp": {
+      "policy": "adaptive_nodamp",
+      "levels": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "q_start": 1,
+      "window_ms": 1000,
+      "min_samples": 25,
+      "target_ms": 0.5,
+      "miss_high": 0.05,
+      "miss_low": 0.01,
+      "up_windows": 1,
+      "_note": "Provisional setting from reference Babbage RAID Study A; not a physical-HDD calibration."
+    }
+  },
+  "platform": "Babbage shared RAID (Dell PERC H755); preliminary, not a single HDD",
+  "quick": false,
+  "seed": 3
+}

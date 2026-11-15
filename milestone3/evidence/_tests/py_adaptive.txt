@@ -1,0 +1,15 @@
+test_adaptive_run_clean (test_adaptive.AdaptiveTests.test_adaptive_run_clean) ... ok
+test_bad_options (test_adaptive.AdaptiveTests.test_bad_options) ... ok
+test_ctrl_c_with_reads_in_flight (test_adaptive.AdaptiveTests.test_ctrl_c_with_reads_in_flight) ... ok
+test_fixed_policy_unchanged (test_adaptive.AdaptiveTests.test_fixed_policy_unchanged) ... ok
+test_no_new_bg_until_drained (test_adaptive.AdaptiveTests.test_no_new_bg_until_drained) ... ok
+test_nodamp_up_every_window (test_adaptive.AdaptiveTests.test_nodamp_up_every_window) ... ok
+test_safe_reduction_below_outstanding (test_adaptive.AdaptiveTests.test_safe_reduction_below_outstanding) ... ok
+test_sparse_windows_hold (test_adaptive.AdaptiveTests.test_sparse_windows_hold) ... ok
+test_up_after_three_good_windows (test_adaptive.AdaptiveTests.test_up_after_three_good_windows) ... ok
+test_window_log_matches_requests (test_adaptive.AdaptiveTests.test_window_log_matches_requests) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 15.287s
+
+OK

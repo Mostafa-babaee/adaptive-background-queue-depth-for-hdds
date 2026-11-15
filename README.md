@@ -10,6 +10,15 @@ Mostafa Babaei, Muhammad Ahmad Tariq, and Sheryar Karim.
 
 Mostafa handles dispatcher integration and correctness checks. Ahmad handles policy settings and analysis. Sheryar handles workloads, experiment execution, hardware records and report coordination. The integrated baseline was supplied as an AI-assisted reference implementation and revised by the team; it is distinct from Mostafa's earlier standalone prototype.
 
+## Milestone 3
+
+- [Adaptive controller, dispatcher, and reproduction instructions](milestone3/README.md)
+- [Milestone 3 results and limitations](milestone3/docs/RESULTS.md)
+- [Study B and C tables, plots, traces, and checksums](milestone3/evidence/m3_20261112T171109Z_a98ce9/)
+- [Babbage test logs](milestone3/evidence/_tests/)
+
+The team tested adaptive control against fixed depths on constant and alternating traces, then tested higher demand and a second scan chunk size. The 56 runs describe Babbage's shared RAID storage. Study B has three repetitions per condition and Study C has two.
+
 ## Milestone 2
 
 - [Source, build and reproduction instructions](milestone2/README.md)

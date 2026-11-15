@@ -1,0 +1,367 @@
+nohup: ignoring input
+
+=== 11:08:46  1/6 build
+cc -O2 -Wall -Wextra -Werror -std=gnu11 -I/home/sgf.edubear.net/mt6289s/local/include -o bin/dispatcher src/dispatcher.c src/controller.c -L/home/sgf.edubear.net/mt6289s/local/lib -Wl,-rpath,/home/sgf.edubear.net/mt6289s/local/lib -luring -lm
+cc -O2 -Wall -Wextra -Werror -std=gnu11 -I/home/sgf.edubear.net/mt6289s/local/include -Isrc -o bin/ctrl_replay tools/ctrl_replay.c src/controller.c -lm
+
+=== 11:08:47  2/6 tests: controller (Tariq), dispatcher + safe reductions (Mostafa), analysis
+```
+C submission scenarios:   PASS: 8 submission-batch scenarios
+C controller unit tests:  controller tests: 63 checks, 0 failed (7 test groups)
+py_analysis: Ran 39 tests in 0.743s OK: /home/sgf.edubear.net/mt6289s/milestone3/results/tmpqlwxx3ku/fixture.dat (256 blocks, file_id=1) matches the pattern
+py_dispatcher: Ran 15 tests in 25.071s Retained dispatcher evidence: /home/sgf.edubear.net/mt6289s/milestone3/tests/_tmp_m2_1794503329
+py_adaptive: Ran 10 tests in 15.287s OK
+```
+
+saved results/test_results_m3.md
+
+=== 11:09:30  3/6 disk record
+# Server disk record (2026-11-12 11:09 CST)
+
+| Item | Value |
+| --- | --- |
+| Host | babbage |
+| Test folder | /home/sgf.edubear.net/mt6289s/mt6289sproject/testdata |
+| Partition | /dev/sda1 |
+| Disk | /dev/sda |
+| Model | PERC H755 Front |
+| Size | 97.8T |
+| Rotational flag | 0 |
+| I/O scheduler | none [mq-deadline]  |
+| Device queue depth | 3840 |
+| Kernel | 6.8.0-106-generic |
+| CPUs | 128 |
+| Free space in test folder | 967G |
+| Users logged in | 56 |
+| Load (1 min) | 5.26 |
+
+Device to pass to run_study_a.py: `--device /dev/sda`
+-rw-r--r-- 1 mt6289s@sgf.edubear.net domain users@sgf.edubear.net 2147483648 Oct 19 10:45 bg.dat
+-rw-r--r-- 1 mt6289s@sgf.edubear.net domain users@sgf.edubear.net  536870912 Oct 19 10:45 fg.dat
+saved /home/sgf.edubear.net/mt6289s/milestone3/results/disk_info.md
+
+=== 11:09:30  4/6 2-minute check run (6 short runs)
+wrote /home/sgf.edubear.net/mt6289s/milestone3/traces/constant_50rps_130s_seed45.csv: 6515 requests (constant), 50.1/s mean over 130 s, seed 45, 131072 possible blocks
+wrote /home/sgf.edubear.net/mt6289s/milestone3/traces/alternating_50-200rps_20s_130s_seed43.csv: 15345 requests (alternating 50/200 per s, 20 s phases), 118.0/s mean over 130 s, seed 43, 131072 possible blocks
+wrote /home/sgf.edubear.net/mt6289s/milestone3/traces/constant_2000rps_130s_seed44.csv: 258935 requests (constant), 1991.8/s mean over 130 s, seed 44, 131072 possible blocks
+Milestone 3 studies: 6 runs, about 3 minutes. Logs: /home/sgf.edubear.net/mt6289s/milestone3/logs/m3quick_20261112T170930Z_9cbab8
+[1/6] B_alternating_fixed_q1_rep1
+   20261112T170930Z_9cbab8_B_alternating_fixed_q1_rep1: accepted=129555 rejected=0 submitted=129555 ok=129555 err=0 unsubmitted=0 verify_fail=0 scan=32258.5 MiB accounting=OK
+[2/6] B_alternating_fixed_q8_rep1
+   20261112T170930Z_9cbab8_B_alternating_fixed_q8_rep1: accepted=236393 rejected=0 submitted=236393 ok=236393 err=0 unsubmitted=0 verify_fail=0 scan=58968.0 MiB accounting=OK
+[3/6] B_alternating_adaptive_rep1
+   20261112T170930Z_9cbab8_B_alternating_adaptive_rep1: accepted=165914 rejected=0 submitted=165914 ok=165914 err=0 unsubmitted=0 verify_fail=0 scan=41348.2 MiB accounting=OK
+[4/6] B_alternating_adaptive_nodamp_rep1
+   20261112T170930Z_9cbab8_B_alternating_adaptive_nodamp_rep1: accepted=203833 rejected=0 submitted=203833 ok=203833 err=0 unsubmitted=0 verify_fail=0 scan=50828.0 MiB accounting=OK
+[5/6] C_overload_overload_adaptive_rep1
+   20261112T170930Z_9cbab8_C_overload_overload_adaptive_rep1: accepted=188514 rejected=0 submitted=188514 ok=188514 err=0 unsubmitted=0 verify_fail=0 scan=42178.0 MiB accounting=OK
+[6/6] C_chunk1m_alternating_adaptive_rep1
+   20261112T170930Z_9cbab8_C_chunk1m_alternating_adaptive_rep1: accepted=57057 rejected=0 submitted=57057 ok=57057 err=0 unsubmitted=0 verify_fail=0 scan=56536.0 MiB accounting=OK
+done: 6 OK, 0 already done, 0 failed, 0 not run
+next: python3 analysis/study_bc.py /home/sgf.edubear.net/mt6289s/milestone3/logs/m3quick_20261112T170930Z_9cbab8
+quick check OK: logs/m3quick_20261112T170930Z_9cbab8
+
+=== 11:11:09  5/6 Study B + Study C: 56 runs, about 2 h 20 min
+Milestone 3 studies: 56 runs, about 140 minutes. Logs: /home/sgf.edubear.net/mt6289s/milestone3/logs/m3_20261112T171109Z_a98ce9
+[1/56] B_constant_fixed_q2_rep1
+   20261112T171109Z_a98ce9_B_constant_fixed_q2_rep1: accepted=2489614 rejected=0 submitted=2489614 ok=2489614 err=0 unsubmitted=0 verify_fail=0 scan=620774.8 MiB accounting=OK
+[2/56] B_alternating_fixed_q2_rep1
+   20261112T171109Z_a98ce9_B_alternating_fixed_q2_rep1: accepted=2555166 rejected=0 submitted=2555166 ok=2555166 err=0 unsubmitted=0 verify_fail=0 scan=634955.2 MiB accounting=OK
+[3/56] B_alternating_adaptive_rep1
+   20261112T171109Z_a98ce9_B_alternating_adaptive_rep1: accepted=2561769 rejected=0 submitted=2561769 ok=2561769 err=0 unsubmitted=0 verify_fail=0 scan=636606.0 MiB accounting=OK
+[4/56] B_constant_fixed_q1_rep1
+   20261112T171109Z_a98ce9_B_constant_fixed_q1_rep1: accepted=1698255 rejected=0 submitted=1698255 ok=1698255 err=0 unsubmitted=0 verify_fail=0 scan=422935.0 MiB accounting=OK
+[5/56] B_alternating_fixed_q1_rep1
+   20261112T171109Z_a98ce9_B_alternating_fixed_q1_rep1: accepted=1718682 rejected=0 submitted=1718682 ok=1718682 err=0 unsubmitted=0 verify_fail=0 scan=425834.2 MiB accounting=OK
+[6/56] B_alternating_adaptive_nodamp_rep1
+   20261112T171109Z_a98ce9_B_alternating_adaptive_nodamp_rep1: accepted=3019481 rejected=0 submitted=3019481 ok=3019481 err=0 unsubmitted=0 verify_fail=0 scan=751034.0 MiB accounting=OK
+[7/56] B_constant_adaptive_rep1
+   20261112T171109Z_a98ce9_B_constant_adaptive_rep1: accepted=2604051 rejected=0 submitted=2604051 ok=2604051 err=0 unsubmitted=0 verify_fail=0 scan=649384.0 MiB accounting=OK
+[8/56] B_constant_adaptive_nodamp_rep1
+   20261112T171109Z_a98ce9_B_constant_adaptive_nodamp_rep1: accepted=2949947 rejected=0 submitted=2949947 ok=2949947 err=0 unsubmitted=0 verify_fail=0 scan=735858.0 MiB accounting=OK
+[9/56] B_constant_fixed_q4_rep1
+   20261112T171109Z_a98ce9_B_constant_fixed_q4_rep1: accepted=2229875 rejected=0 submitted=2229875 ok=2229875 err=0 unsubmitted=0 verify_fail=0 scan=555840.0 MiB accounting=OK
+[10/56] B_alternating_fixed_q4_rep1
+   20261112T171109Z_a98ce9_B_alternating_fixed_q4_rep1: accepted=2248973 rejected=0 submitted=2248973 ok=2248973 err=0 unsubmitted=0 verify_fail=0 scan=558407.0 MiB accounting=OK
+[11/56] B_alternating_fixed_q8_rep1
+   20261112T171109Z_a98ce9_B_alternating_fixed_q8_rep1: accepted=3112769 rejected=0 submitted=3112769 ok=3112769 err=0 unsubmitted=0 verify_fail=0 scan=774356.0 MiB accounting=OK
+[12/56] B_constant_fixed_q8_rep1
+   20261112T171109Z_a98ce9_B_constant_fixed_q8_rep1: accepted=3095963 rejected=0 submitted=3095963 ok=3095963 err=0 unsubmitted=0 verify_fail=0 scan=772362.0 MiB accounting=OK
+[13/56] B_constant_fixed_q4_rep2
+   20261112T171109Z_a98ce9_B_constant_fixed_q4_rep2: accepted=2236591 rejected=0 submitted=2236591 ok=2236591 err=0 unsubmitted=0 verify_fail=0 scan=557519.0 MiB accounting=OK
+[14/56] B_constant_fixed_q1_rep2
+   20261112T171109Z_a98ce9_B_constant_fixed_q1_rep2: accepted=1725582 rejected=0 submitted=1725582 ok=1725582 err=0 unsubmitted=0 verify_fail=0 scan=429766.8 MiB accounting=OK
+[15/56] B_constant_fixed_q2_rep2
+   20261112T171109Z_a98ce9_B_constant_fixed_q2_rep2: accepted=2513747 rejected=0 submitted=2513747 ok=2513747 err=0 unsubmitted=0 verify_fail=0 scan=626808.0 MiB accounting=OK
+[16/56] B_alternating_fixed_q1_rep2
+   20261112T171109Z_a98ce9_B_alternating_fixed_q1_rep2: accepted=1715625 rejected=0 submitted=1715625 ok=1715625 err=0 unsubmitted=0 verify_fail=0 scan=425070.0 MiB accounting=OK
+[17/56] B_alternating_adaptive_rep2
+   20261112T171109Z_a98ce9_B_alternating_adaptive_rep2: accepted=2702913 rejected=0 submitted=2702913 ok=2702913 err=0 unsubmitted=0 verify_fail=0 scan=671892.0 MiB accounting=OK
+[18/56] B_alternating_adaptive_nodamp_rep2
+   20261112T171109Z_a98ce9_B_alternating_adaptive_nodamp_rep2: accepted=2852417 rejected=0 submitted=2852417 ok=2852417 err=0 unsubmitted=0 verify_fail=0 scan=709268.0 MiB accounting=OK
+[19/56] B_constant_adaptive_nodamp_rep2
+   20261112T171109Z_a98ce9_B_constant_adaptive_nodamp_rep2: accepted=2908039 rejected=0 submitted=2908039 ok=2908039 err=0 unsubmitted=0 verify_fail=0 scan=725381.0 MiB accounting=OK
+[20/56] B_alternating_fixed_q8_rep2
+   20261112T171109Z_a98ce9_B_alternating_fixed_q8_rep2: accepted=3108625 rejected=0 submitted=3108625 ok=3108625 err=0 unsubmitted=0 verify_fail=0 scan=773320.0 MiB accounting=OK
+[21/56] B_constant_fixed_q8_rep2
+   20261112T171109Z_a98ce9_B_constant_fixed_q8_rep2: accepted=3054243 rejected=0 submitted=3054243 ok=3054243 err=0 unsubmitted=0 verify_fail=0 scan=761932.0 MiB accounting=OK
+[22/56] B_alternating_fixed_q4_rep2
+   20261112T171109Z_a98ce9_B_alternating_fixed_q4_rep2: accepted=2240073 rejected=0 submitted=2240073 ok=2240073 err=0 unsubmitted=0 verify_fail=0 scan=556182.0 MiB accounting=OK
+[23/56] B_constant_adaptive_rep2
+   20261112T171109Z_a98ce9_B_constant_adaptive_rep2: accepted=2597563 rejected=0 submitted=2597563 ok=2597563 err=0 unsubmitted=0 verify_fail=0 scan=647762.0 MiB accounting=OK
+[24/56] B_alternating_fixed_q2_rep2
+   20261112T171109Z_a98ce9_B_alternating_fixed_q2_rep2: accepted=2497509 rejected=0 submitted=2497509 ok=2497509 err=0 unsubmitted=0 verify_fail=0 scan=620541.0 MiB accounting=OK
+[25/56] B_alternating_adaptive_nodamp_rep3
+   20261112T171109Z_a98ce9_B_alternating_adaptive_nodamp_rep3: accepted=2924145 rejected=0 submitted=2924145 ok=2924145 err=0 unsubmitted=0 verify_fail=0 scan=727200.0 MiB accounting=OK
+[26/56] B_constant_adaptive_rep3
+   20261112T171109Z_a98ce9_B_constant_adaptive_rep3: accepted=2542055 rejected=0 submitted=2542055 ok=2542055 err=0 unsubmitted=0 verify_fail=0 scan=633885.0 MiB accounting=OK
+[27/56] B_alternating_fixed_q8_rep3
+   20261112T171109Z_a98ce9_B_alternating_fixed_q8_rep3: accepted=3135941 rejected=0 submitted=3135941 ok=3135941 err=0 unsubmitted=0 verify_fail=0 scan=780149.0 MiB accounting=OK
+[28/56] B_constant_fixed_q2_rep3
+   20261112T171109Z_a98ce9_B_constant_fixed_q2_rep3: accepted=2496048 rejected=0 submitted=2496048 ok=2496048 err=0 unsubmitted=0 verify_fail=0 scan=622383.2 MiB accounting=OK
+[29/56] B_alternating_fixed_q2_rep3
+   20261112T171109Z_a98ce9_B_alternating_fixed_q2_rep3: accepted=2500157 rejected=0 submitted=2500157 ok=2500157 err=0 unsubmitted=0 verify_fail=0 scan=621203.0 MiB accounting=OK
+[30/56] B_constant_fixed_q1_rep3
+   20261112T171109Z_a98ce9_B_constant_fixed_q1_rep3: accepted=1706076 rejected=0 submitted=1706076 ok=1706076 err=0 unsubmitted=0 verify_fail=0 scan=424890.2 MiB accounting=OK
+[31/56] B_constant_adaptive_nodamp_rep3
+   20261112T171109Z_a98ce9_B_constant_adaptive_nodamp_rep3: accepted=2774731 rejected=0 submitted=2774731 ok=2774731 err=0 unsubmitted=0 verify_fail=0 scan=692054.0 MiB accounting=OK
+[32/56] B_alternating_fixed_q1_rep3
+   20261112T171109Z_a98ce9_B_alternating_fixed_q1_rep3: accepted=1732505 rejected=0 submitted=1732505 ok=1732505 err=0 unsubmitted=0 verify_fail=0 scan=429290.0 MiB accounting=OK
+[33/56] B_alternating_fixed_q4_rep3
+   20261112T171109Z_a98ce9_B_alternating_fixed_q4_rep3: accepted=2228201 rejected=0 submitted=2228201 ok=2228201 err=0 unsubmitted=0 verify_fail=0 scan=553214.0 MiB accounting=OK
+[34/56] B_constant_fixed_q4_rep3
+   20261112T171109Z_a98ce9_B_constant_fixed_q4_rep3: accepted=2228939 rejected=0 submitted=2228939 ok=2228939 err=0 unsubmitted=0 verify_fail=0 scan=555606.0 MiB accounting=OK
+[35/56] B_alternating_adaptive_rep3
+   20261112T171109Z_a98ce9_B_alternating_adaptive_rep3: accepted=2526731 rejected=0 submitted=2526731 ok=2526731 err=0 unsubmitted=0 verify_fail=0 scan=627846.5 MiB accounting=OK
+[36/56] B_constant_fixed_q8_rep3
+   20261112T171109Z_a98ce9_B_constant_fixed_q8_rep3: accepted=3055239 rejected=0 submitted=3055239 ok=3055239 err=0 unsubmitted=0 verify_fail=0 scan=762181.0 MiB accounting=OK
+[37/56] C_overload_overload_fixed_q8_rep1
+   20261112T171109Z_a98ce9_C_overload_overload_fixed_q8_rep1: accepted=3236731 rejected=0 submitted=3236731 ok=3236731 err=0 unsubmitted=0 verify_fail=0 scan=744449.0 MiB accounting=OK
+[38/56] C_overload_overload_adaptive_rep1
+   20261112T171109Z_a98ce9_C_overload_overload_adaptive_rep1: accepted=2999063 rejected=0 submitted=2999063 ok=2999063 err=0 unsubmitted=0 verify_fail=0 scan=685032.0 MiB accounting=OK
+[39/56] C_overload_overload_fixed_q2_rep1
+   20261112T171109Z_a98ce9_C_overload_overload_fixed_q2_rep1: accepted=2664482 rejected=0 submitted=2664482 ok=2664482 err=0 unsubmitted=0 verify_fail=0 scan=601386.8 MiB accounting=OK
+[40/56] C_overload_overload_fixed_q1_rep1
+   20261112T171109Z_a98ce9_C_overload_overload_fixed_q1_rep1: accepted=1924593 rejected=0 submitted=1924593 ok=1924593 err=0 unsubmitted=0 verify_fail=0 scan=416414.5 MiB accounting=OK
+[41/56] C_overload_overload_fixed_q4_rep1
+   20261112T171109Z_a98ce9_C_overload_overload_fixed_q4_rep1: accepted=2466763 rejected=0 submitted=2466763 ok=2466763 err=0 unsubmitted=0 verify_fail=0 scan=551957.0 MiB accounting=OK
+[42/56] C_overload_overload_fixed_q1_rep2
+   20261112T171109Z_a98ce9_C_overload_overload_fixed_q1_rep2: accepted=1951587 rejected=0 submitted=1951587 ok=1951587 err=0 unsubmitted=0 verify_fail=0 scan=423163.0 MiB accounting=OK
+[43/56] C_overload_overload_fixed_q2_rep2
+   20261112T171109Z_a98ce9_C_overload_overload_fixed_q2_rep2: accepted=2636677 rejected=0 submitted=2636677 ok=2636677 err=0 unsubmitted=0 verify_fail=0 scan=594435.5 MiB accounting=OK
+[44/56] C_overload_overload_fixed_q4_rep2
+   20261112T171109Z_a98ce9_C_overload_overload_fixed_q4_rep2: accepted=2472399 rejected=0 submitted=2472399 ok=2472399 err=0 unsubmitted=0 verify_fail=0 scan=553366.0 MiB accounting=OK
+[45/56] C_overload_overload_fixed_q8_rep2
+   20261112T171109Z_a98ce9_C_overload_overload_fixed_q8_rep2: accepted=3203379 rejected=0 submitted=3203379 ok=3203379 err=0 unsubmitted=0 verify_fail=0 scan=736111.0 MiB accounting=OK
+[46/56] C_overload_overload_adaptive_rep2
+   20261112T171109Z_a98ce9_C_overload_overload_adaptive_rep2: accepted=2888127 rejected=0 submitted=2888127 ok=2888127 err=0 unsubmitted=0 verify_fail=0 scan=657298.0 MiB accounting=OK
+[47/56] C_chunk1m_alternating_fixed_q4_rep1
+   20261112T171109Z_a98ce9_C_chunk1m_alternating_fixed_q4_rep1: accepted=936611 rejected=0 submitted=936611 ok=936611 err=0 unsubmitted=0 verify_fail=0 scan=921266.0 MiB accounting=OK
+[48/56] C_chunk1m_alternating_fixed_q2_rep1
+   20261112T171109Z_a98ce9_C_chunk1m_alternating_fixed_q2_rep1: accepted=833571 rejected=0 submitted=833571 ok=833571 err=0 unsubmitted=0 verify_fail=0 scan=818226.0 MiB accounting=OK
+[49/56] C_chunk1m_alternating_fixed_q1_rep1
+   20261112T171109Z_a98ce9_C_chunk1m_alternating_fixed_q1_rep1: accepted=586512 rejected=0 submitted=586512 ok=586512 err=0 unsubmitted=0 verify_fail=0 scan=571167.0 MiB accounting=OK
+[50/56] C_chunk1m_alternating_adaptive_rep1
+   20261112T171109Z_a98ce9_C_chunk1m_alternating_adaptive_rep1: accepted=765583 rejected=0 submitted=765583 ok=765583 err=0 unsubmitted=0 verify_fail=0 scan=750238.0 MiB accounting=OK
+[51/56] C_chunk1m_alternating_fixed_q8_rep1
+   20261112T171109Z_a98ce9_C_chunk1m_alternating_fixed_q8_rep1: accepted=928945 rejected=0 submitted=928945 ok=928945 err=0 unsubmitted=0 verify_fail=0 scan=913600.0 MiB accounting=OK
+[52/56] C_chunk1m_alternating_fixed_q4_rep2
+   20261112T171109Z_a98ce9_C_chunk1m_alternating_fixed_q4_rep2: accepted=943839 rejected=0 submitted=943839 ok=943839 err=0 unsubmitted=0 verify_fail=0 scan=928494.0 MiB accounting=OK
+[53/56] C_chunk1m_alternating_fixed_q2_rep2
+   20261112T171109Z_a98ce9_C_chunk1m_alternating_fixed_q2_rep2: accepted=833665 rejected=0 submitted=833665 ok=833665 err=0 unsubmitted=0 verify_fail=0 scan=818320.0 MiB accounting=OK
+[54/56] C_chunk1m_alternating_fixed_q8_rep2
+   20261112T171109Z_a98ce9_C_chunk1m_alternating_fixed_q8_rep2: accepted=936265 rejected=0 submitted=936265 ok=936265 err=0 unsubmitted=0 verify_fail=0 scan=920920.0 MiB accounting=OK
+[55/56] C_chunk1m_alternating_adaptive_rep2
+   20261112T171109Z_a98ce9_C_chunk1m_alternating_adaptive_rep2: accepted=770693 rejected=0 submitted=770693 ok=770693 err=0 unsubmitted=0 verify_fail=0 scan=755348.0 MiB accounting=OK
+[56/56] C_chunk1m_alternating_fixed_q1_rep2
+   20261112T171109Z_a98ce9_C_chunk1m_alternating_fixed_q1_rep2: accepted=594314 rejected=0 submitted=594314 ok=594314 err=0 unsubmitted=0 verify_fail=0 scan=578969.0 MiB accounting=OK
+done: 56 OK, 0 already done, 0 failed, 0 not run
+next: python3 analysis/study_bc.py /home/sgf.edubear.net/mt6289s/milestone3/logs/m3_20261112T171109Z_a98ce9
+
+=== 13:22:08  6/6 analysis, plots and diagnosis
+ok  B_alternating_adaptive_nodamp_rep1  p99 0.52 ms  miss 1.7 %  scan 5848 MiB/s  mean q 7.67
+ok  B_alternating_adaptive_nodamp_rep2  p99 0.55 ms  miss 3.7 %  scan 5522 MiB/s  mean q 7.12
+ok  B_alternating_adaptive_nodamp_rep3  p99 0.55 ms  miss 3.4 %  scan 5636 MiB/s  mean q 7.07
+ok  B_alternating_adaptive_rep1  p99 0.54 ms  miss 2.2 %  scan 4950 MiB/s  mean q 5.58
+ok  B_alternating_adaptive_rep2  p99 0.54 ms  miss 2.3 %  scan 5239 MiB/s  mean q 6.27
+ok  B_alternating_adaptive_rep3  p99 0.54 ms  miss 2.4 %  scan 4882 MiB/s  mean q 5.38
+ok  B_alternating_fixed_q1_rep1  p99 0.20 ms  miss 0.0 %  scan 3275 MiB/s  mean q 1.00
+ok  B_alternating_fixed_q1_rep2  p99 0.20 ms  miss 0.0 %  scan 3271 MiB/s  mean q 1.00
+ok  B_alternating_fixed_q1_rep3  p99 0.20 ms  miss 0.0 %  scan 3309 MiB/s  mean q 1.00
+ok  B_alternating_fixed_q2_rep1  p99 0.26 ms  miss 0.0 %  scan 4890 MiB/s  mean q 2.00
+ok  B_alternating_fixed_q2_rep2  p99 0.30 ms  miss 0.0 %  scan 4774 MiB/s  mean q 2.00
+ok  B_alternating_fixed_q2_rep3  p99 0.28 ms  miss 0.0 %  scan 4777 MiB/s  mean q 2.00
+ok  B_alternating_fixed_q4_rep1  p99 0.42 ms  miss 0.3 %  scan 4293 MiB/s  mean q 4.00
+ok  B_alternating_fixed_q4_rep2  p99 0.44 ms  miss 0.4 %  scan 4277 MiB/s  mean q 4.00
+ok  B_alternating_fixed_q4_rep3  p99 0.44 ms  miss 0.5 %  scan 4256 MiB/s  mean q 4.00
+ok  B_alternating_fixed_q8_rep1  p99 0.58 ms  miss 3.2 %  scan 5953 MiB/s  mean q 8.00
+ok  B_alternating_fixed_q8_rep2  p99 0.56 ms  miss 5.0 %  scan 5945 MiB/s  mean q 8.00
+ok  B_alternating_fixed_q8_rep3  p99 0.54 ms  miss 2.9 %  scan 5998 MiB/s  mean q 8.00
+ok  B_constant_adaptive_nodamp_rep1  p99 0.54 ms  miss 2.7 %  scan 5706 MiB/s  mean q 7.35
+ok  B_constant_adaptive_nodamp_rep2  p99 0.55 ms  miss 3.1 %  scan 5607 MiB/s  mean q 7.15
+ok  B_constant_adaptive_nodamp_rep3  p99 0.56 ms  miss 4.0 %  scan 5329 MiB/s  mean q 6.50
+ok  B_constant_adaptive_rep1  p99 0.54 ms  miss 2.4 %  scan 5050 MiB/s  mean q 5.87
+ok  B_constant_adaptive_rep2  p99 0.54 ms  miss 2.5 %  scan 5039 MiB/s  mean q 5.68
+ok  B_constant_adaptive_rep3  p99 0.54 ms  miss 2.5 %  scan 4959 MiB/s  mean q 5.47
+ok  B_constant_fixed_q1_rep1  p99 0.20 ms  miss 0.0 %  scan 3252 MiB/s  mean q 1.00
+ok  B_constant_fixed_q1_rep2  p99 0.20 ms  miss 0.0 %  scan 3307 MiB/s  mean q 1.00
+ok  B_constant_fixed_q1_rep3  p99 0.20 ms  miss 0.0 %  scan 3269 MiB/s  mean q 1.00
+ok  B_constant_fixed_q2_rep1  p99 0.28 ms  miss 0.0 %  scan 4780 MiB/s  mean q 2.00
+ok  B_constant_fixed_q2_rep2  p99 0.26 ms  miss 0.0 %  scan 4830 MiB/s  mean q 2.00
+ok  B_constant_fixed_q2_rep3  p99 0.29 ms  miss 0.0 %  scan 4787 MiB/s  mean q 2.00
+ok  B_constant_fixed_q4_rep1  p99 0.45 ms  miss 0.5 %  scan 4272 MiB/s  mean q 4.00
+ok  B_constant_fixed_q4_rep2  p99 0.39 ms  miss 0.2 %  scan 4288 MiB/s  mean q 4.00
+ok  B_constant_fixed_q4_rep3  p99 0.39 ms  miss 0.2 %  scan 4272 MiB/s  mean q 4.00
+ok  B_constant_fixed_q8_rep1  p99 0.56 ms  miss 5.0 %  scan 5949 MiB/s  mean q 8.00
+ok  B_constant_fixed_q8_rep2  p99 0.58 ms  miss 6.4 %  scan 5880 MiB/s  mean q 8.00
+ok  B_constant_fixed_q8_rep3  p99 0.58 ms  miss 6.2 %  scan 5861 MiB/s  mean q 8.00
+ok  C_chunk1m_alternating_adaptive_rep1  p99 0.54 ms  miss 2.0 %  scan 5794 MiB/s  mean q 1.73
+ok  C_chunk1m_alternating_adaptive_rep2  p99 0.55 ms  miss 2.5 %  scan 5828 MiB/s  mean q 1.76
+ok  C_chunk1m_alternating_fixed_q1_rep1  p99 0.32 ms  miss 0.1 %  scan 4391 MiB/s  mean q 1.00
+ok  C_chunk1m_alternating_fixed_q1_rep2  p99 0.31 ms  miss 0.0 %  scan 4452 MiB/s  mean q 1.00
+ok  C_chunk1m_alternating_fixed_q2_rep1  p99 0.60 ms  miss 3.8 %  scan 6286 MiB/s  mean q 2.00
+ok  C_chunk1m_alternating_fixed_q2_rep2  p99 0.56 ms  miss 3.3 %  scan 6298 MiB/s  mean q 2.00
+ok  C_chunk1m_alternating_fixed_q4_rep1  p99 1.17 ms  miss 47.7 %  scan 7076 MiB/s  mean q 4.00
+ok  C_chunk1m_alternating_fixed_q4_rep2  p99 0.86 ms  miss 46.5 %  scan 7137 MiB/s  mean q 4.00
+ok  C_chunk1m_alternating_fixed_q8_rep1  p99 1.96 ms  miss 100.0 %  scan 7021 MiB/s  mean q 8.00
+ok  C_chunk1m_alternating_fixed_q8_rep2  p99 1.89 ms  miss 100.0 %  scan 7080 MiB/s  mean q 8.00
+ok  C_overload_overload_adaptive_rep1  p99 0.56 ms  miss 3.5 %  scan 5383 MiB/s  mean q 7.05
+ok  C_overload_overload_adaptive_rep2  p99 0.56 ms  miss 3.0 %  scan 5128 MiB/s  mean q 6.47
+ok  C_overload_overload_fixed_q1_rep1  p99 0.20 ms  miss 0.0 %  scan 3203 MiB/s  mean q 1.00
+ok  C_overload_overload_fixed_q1_rep2  p99 0.20 ms  miss 0.1 %  scan 3254 MiB/s  mean q 1.00
+ok  C_overload_overload_fixed_q2_rep1  p99 0.28 ms  miss 0.0 %  scan 4627 MiB/s  mean q 2.00
+ok  C_overload_overload_fixed_q2_rep2  p99 0.28 ms  miss 0.0 %  scan 4572 MiB/s  mean q 2.00
+ok  C_overload_overload_fixed_q4_rep1  p99 0.39 ms  miss 0.3 %  scan 4253 MiB/s  mean q 4.00
+ok  C_overload_overload_fixed_q4_rep2  p99 0.39 ms  miss 0.2 %  scan 4260 MiB/s  mean q 4.00
+ok  C_overload_overload_fixed_q8_rep1  p99 0.63 ms  miss 5.0 %  scan 5728 MiB/s  mean q 8.00
+ok  C_overload_overload_fixed_q8_rep2  p99 0.58 ms  miss 5.3 %  scan 5662 MiB/s  mean q 8.00
+# Milestone 3 results: Study B and Study C
+
+Logs: `logs/m3_20261112T171109Z_a98ce9`. Runs: 56. Warm-up dropped. Mean ± sd over repetitions. Latency target 0.5 ms, window 1000 ms, a miss = FG read slower than the target.
+
+**Integrity: 56 of 56 runs clean** (accounting OK, 0 errors, every byte verified, O_DIRECT, offered requests equal to the trace, no BG read sent while bg_out ≥ q).
+
+## Study B
+
+### alternating trace
+
+| Policy | reps | FG p50 ms | FG p99 ms | miss % | scan MiB/s | scan GiB | mean q | q changes | reversals/min | rejected |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| fixed q=1 | 3 | 0.14 | 0.20 ± 0.00 | 0.0 ± 0.0 | 3285 ± 21 | 385 | 1.00 | 0.0 | 0.00 | 0 |
+| fixed q=2 | 3 | 0.19 | 0.28 ± 0.02 | 0.0 ± 0.0 | 4814 ± 66 | 564 | 2.00 | 0.0 | 0.00 | 0 |
+| fixed q=4 | 3 | 0.25 | 0.43 ± 0.01 | 0.4 ± 0.1 | 4275 ± 19 | 501 | 4.00 | 0.0 | 0.00 | 0 |
+| fixed q=8 | 3 | 0.31 | 0.56 ± 0.02 | 3.7 ± 1.2 | 5965 ± 29 | 699 | 8.00 | 0.0 | 0.00 | 0 |
+| adaptive | 3 | 0.29 | 0.54 ± 0.00 | 2.3 ± 0.1 | 5024 ± 190 | 589 | 5.74 | 38.7 | 17.83 | 0 |
+| no-damping ablation | 3 | 0.31 | 0.54 ± 0.02 | 2.9 ± 1.0 | 5669 ± 165 | 664 | 7.28 | 30.0 | 13.17 | 0 |
+
+Per phase (alternating trace):
+
+| Policy | quiet miss % | busy miss % | quiet mean q | busy mean q | reaction s | recovery s |
+| --- | --- | --- | --- | --- | --- | --- |
+| fixed q=1 | 0.0 | 0.0 | 1.00 | 1.00 | – | – |
+| fixed q=2 | 0.0 | 0.0 | 2.00 | 2.00 | – | – |
+| fixed q=4 | 0.5 | 0.4 | 4.00 | 4.00 | – | – |
+| fixed q=8 | 4.4 | 3.5 | 8.00 | 8.00 | – | – |
+| adaptive | 2.3 | 2.3 | 5.64 | 5.84 | 4.4 | 0.1 |
+| no-damping ablation | 3.0 | 2.9 | 7.12 | 7.44 | 8.0 | 0.3 |
+
+Reaction = busy phase starts → first step down. Recovery = busy phase ends → q back at its level from before the busy phase. – = never happened in the phase.
+
+**Comparison:** the best fixed depth that keeps misses ≤ 5 % is fixed q=8 (3.7 % misses, 5965 MiB/s). Adaptive: 2.3 % misses, 5024 MiB/s (-16 % scan rate vs that fixed depth).
+
+### constant trace
+
+| Policy | reps | FG p50 ms | FG p99 ms | miss % | scan MiB/s | scan GiB | mean q | q changes | reversals/min | rejected |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| fixed q=1 | 3 | 0.15 | 0.20 ± 0.00 | 0.0 ± 0.0 | 3276 ± 28 | 384 | 1.00 | 0.0 | 0.00 | 0 |
+| fixed q=2 | 3 | 0.19 | 0.28 ± 0.02 | 0.0 ± 0.0 | 4799 ± 27 | 562 | 2.00 | 0.0 | 0.00 | 0 |
+| fixed q=4 | 3 | 0.26 | 0.41 ± 0.04 | 0.3 ± 0.2 | 4277 ± 9 | 501 | 4.00 | 0.0 | 0.00 | 0 |
+| fixed q=8 | 3 | 0.33 | 0.57 ± 0.01 | 5.9 ± 0.8 | 5896 ± 46 | 691 | 8.00 | 0.0 | 0.00 | 0 |
+| adaptive | 3 | 0.29 | 0.54 ± 0.00 | 2.5 ± 0.0 | 5016 ± 50 | 588 | 5.67 | 40.3 | 18.67 | 0 |
+| no-damping ablation | 3 | 0.31 | 0.55 ± 0.01 | 3.3 ± 0.6 | 5548 ± 195 | 650 | 7.00 | 44.0 | 20.17 | 0 |
+
+**Comparison:** the best fixed depth that keeps misses ≤ 5 % is fixed q=2 (0.0 % misses, 4799 MiB/s). Adaptive: 2.5 % misses, 5016 MiB/s (5 % scan rate vs that fixed depth).
+
+## Study C: overload
+
+### overload trace
+
+| Policy | reps | FG p50 ms | FG p99 ms | miss % | scan MiB/s | scan GiB | mean q | q changes | reversals/min | rejected |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| fixed q=1 | 2 | 0.14 | 0.20 ± 0.00 | 0.0 ± 0.0 | 3229 ± 36 | 378 | 1.00 | 0.0 | 0.00 | 0 |
+| fixed q=2 | 2 | 0.18 | 0.28 ± 0.00 | 0.0 ± 0.0 | 4600 ± 38 | 539 | 2.00 | 0.0 | 0.00 | 0 |
+| fixed q=4 | 2 | 0.23 | 0.39 ± 0.00 | 0.2 ± 0.1 | 4257 ± 5 | 499 | 4.00 | 0.0 | 0.00 | 0 |
+| fixed q=8 | 2 | 0.32 | 0.60 ± 0.04 | 5.1 ± 0.3 | 5695 ± 46 | 667 | 8.00 | 0.0 | 0.00 | 0 |
+| adaptive | 2 | 0.30 | 0.56 ± 0.00 | 3.3 ± 0.4 | 5256 ± 181 | 616 | 6.76 | 19.0 | 8.50 | 0 |
+
+**Comparison:** the best fixed depth that keeps misses ≤ 5 % is fixed q=2 (0.0 % misses, 4600 MiB/s). Adaptive: 3.3 % misses, 5256 MiB/s (14 % scan rate vs that fixed depth).
+
+## Study C: 1 MiB chunks
+
+### alternating trace
+
+| Policy | reps | FG p50 ms | FG p99 ms | miss % | scan MiB/s | scan GiB | mean q | q changes | reversals/min | rejected |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| fixed q=1 | 2 | 0.20 | 0.32 ± 0.00 | 0.0 ± 0.0 | 4422 ± 43 | 518 | 1.00 | 0.0 | 0.00 | 0 |
+| fixed q=2 | 2 | 0.30 | 0.58 ± 0.02 | 3.5 ± 0.3 | 6292 ± 8 | 737 | 2.00 | 0.0 | 0.00 | 0 |
+| fixed q=4 | 2 | 0.49 | 1.02 ± 0.22 | 47.1 ± 0.8 | 7106 ± 43 | 833 | 4.00 | 0.0 | 0.00 | 0 |
+| fixed q=8 | 2 | 1.24 | 1.93 ± 0.05 | 100.0 ± 0.0 | 7050 ± 41 | 826 | 8.00 | 0.0 | 0.00 | 0 |
+| adaptive | 2 | 0.27 | 0.54 ± 0.01 | 2.3 ± 0.3 | 5811 ± 24 | 681 | 1.75 | 21.5 | 9.50 | 0 |
+
+Per phase (alternating trace):
+
+| Policy | quiet miss % | busy miss % | quiet mean q | busy mean q | reaction s | recovery s |
+| --- | --- | --- | --- | --- | --- | --- |
+| fixed q=1 | 0.1 | 0.0 | 1.00 | 1.00 | – | – |
+| fixed q=2 | 3.8 | 3.5 | 2.00 | 2.00 | – | – |
+| fixed q=4 | 47.8 | 46.9 | 4.00 | 4.00 | – | – |
+| fixed q=8 | 100.0 | 100.0 | 8.00 | 8.00 | – | – |
+| adaptive | 2.5 | 2.2 | 1.68 | 1.82 | 9.0 | 0.0 |
+
+Reaction = busy phase starts → first step down. Recovery = busy phase ends → q back at its level from before the busy phase. – = never happened in the phase.
+
+**Comparison:** the best fixed depth that keeps misses ≤ 5 % is fixed q=2 (3.5 % misses, 6292 MiB/s). Adaptive: 2.3 % misses, 5811 MiB/s (-8 % scan rate vs that fixed depth).
+
+## Actual depth and pending queues (Study B)
+
+| Trace | Policy | configured q (mean) | actual BG in flight (mean) | FG pending (mean / max) |
+| --- | --- | --- | --- | --- |
+| alternating | adaptive | 5.74 | 4.55 | 0.00 / 0 |
+| alternating | no-damping ablation | 7.28 | 5.71 | 0.00 / 0 |
+| alternating | fixed q=1 | 1.00 | 0.74 | 0.00 / 0 |
+| alternating | fixed q=2 | 2.00 | 1.45 | 0.00 / 0 |
+| alternating | fixed q=4 | 4.00 | 3.24 | 0.00 / 0 |
+| alternating | fixed q=8 | 8.00 | 6.25 | 0.00 / 0 |
+| constant | adaptive | 5.67 | 4.50 | 0.00 / 0 |
+| constant | no-damping ablation | 7.00 | 5.50 | 0.00 / 0 |
+| constant | fixed q=1 | 1.00 | 0.75 | 0.00 / 0 |
+| constant | fixed q=2 | 2.00 | 1.45 | 0.00 / 0 |
+| constant | fixed q=4 | 4.00 | 3.24 | 0.00 / 0 |
+| constant | fixed q=8 | 8.00 | 6.27 | 0.00 / 0 |
+
+## Controller CPU cost and safe reductions
+
+- Controller decision: mean 1.18 µs per window, max 3.18 µs (one decision per 1000 ms window).
+- Whole dispatcher process CPU per run: adaptive 94.8 s, fixed 89.9 s.
+- Cuts of q below the reads already in flight: 215 in total; longest drain 0.311 ms; in every run no BG read was sent while bg_out ≥ q.
+
+## Diagnosis: oscillation and recovery (adaptive vs no-damping ablation)
+
+| Trace | Policy | q changes | reversals/min | time at q=1/2/4/8 (%) | miss % | scan MiB/s |
+| --- | --- | --- | --- | --- | --- | --- |
+| alternating | adaptive | 38.7 | 17.83 | 0/3/52/45 | 2.3 | 5024 |
+| alternating | no-damping ablation | 30.0 | 13.17 | 0/1/16/83 | 2.9 | 5669 |
+| constant | adaptive | 40.3 | 18.67 | 0/3/54/43 | 2.5 | 5016 |
+| constant | no-damping ablation | 44.0 | 20.17 | 0/2/22/76 | 3.3 | 5548 |
+
+A reversal is q going up then down (or down then up). Many reversals = oscillation.
+
+Figures: `B_constant_timeseries.png`, `B_alternating_timeseries.png`, `B_tradeoff_miss.png`, `B_tradeoff_p99.png`, `ablation_oscillation.png`, `C_overload.png`, `C_chunk1m.png`, `C_chunk1m_timeseries.png`, `C_overload_timeseries.png`.
+
+Platform note: all runs use only the course server (babbage). Its disk is a shared Dell PERC H755 RAID virtual disk. The 0.5 ms target was frozen from Study A (Milestone 2) on the same server, before these evaluation runs.
+
+outputs in /home/sgf.edubear.net/mt6289s/milestone3/results/m3_20261112T171109Z_a98ce9
+
+ALL DONE 13:28:37.
+Send this folder:  results/m3_20261112T171109Z_a98ce9   (summary.md, figures, tables, small time series)
+Raw logs stay in:  logs/m3_20261112T171109Z_a98ce9   (3.6G); keep them for the raw archive

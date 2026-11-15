@@ -1,0 +1,12 @@
+/bin/
+/build/
+/results/
+/logs/
+/.venv/
+__pycache__/
+*.dat
+*.bin
+/tests/_tmp/
+.DS_Store
+__MACOSX/
+*.tar.gz

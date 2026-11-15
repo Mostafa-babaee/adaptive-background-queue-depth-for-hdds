@@ -1,0 +1,93 @@
+ok  B_alternating_adaptive_nodamp_rep1  p99 0.55 ms  miss 3.3 %  scan 5343 MiB/s  mean q 6.50
+ok  B_alternating_adaptive_rep1  p99 0.48 ms  miss 0.9 %  scan 4350 MiB/s  mean q 2.12
+ok  B_alternating_fixed_q1_rep1  p99 0.19 ms  miss 0.0 %  scan 3285 MiB/s  mean q 1.00
+ok  B_alternating_fixed_q8_rep1  p99 0.56 ms  miss 5.5 %  scan 5896 MiB/s  mean q 8.00
+ok  C_chunk1m_alternating_adaptive_rep1  p99 0.50 ms  miss 1.2 %  scan 5950 MiB/s  mean q 1.75
+ok  C_overload_overload_adaptive_rep1  p99 0.45 ms  miss 0.5 %  scan 4463 MiB/s  mean q 3.38
+# Milestone 3 results: Study B and Study C
+
+Logs: `logs/m3quick_20261112T170930Z_9cbab8`. Runs: 6. Warm-up dropped. Mean ± sd over repetitions. Latency target 0.5 ms, window 1000 ms, a miss = FG read slower than the target.
+
+**Integrity: 6 of 6 runs clean** (accounting OK, 0 errors, every byte verified, O_DIRECT, offered requests equal to the trace, no BG read sent while bg_out ≥ q).
+
+## Study B
+
+### alternating trace
+
+| Policy | reps | FG p50 ms | FG p99 ms | miss % | scan MiB/s | scan GiB | mean q | q changes | reversals/min | rejected |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| fixed q=1 | 1 | 0.15 | 0.19 ± – | 0.0 ± – | 3285 ± – | 26 | 1.00 | 0.0 | 0.00 | 0 |
+| fixed q=8 | 1 | 0.32 | 0.56 ± – | 5.5 ± – | 5896 ± – | 46 | 8.00 | 0.0 | 0.00 | 0 |
+| adaptive | 1 | 0.19 | 0.48 ± – | 0.9 ± – | 4350 ± – | 34 | 2.12 | 3.0 | 7.50 | 0 |
+| no-damping ablation | 1 | 0.30 | 0.55 ± – | 3.3 ± – | 5343 ± – | 42 | 6.50 | 5.0 | 30.00 | 0 |
+
+Per phase (alternating trace):
+
+| Policy | quiet miss % | busy miss % | quiet mean q | busy mean q | reaction s | recovery s |
+| --- | --- | --- | --- | --- | --- | --- |
+| fixed q=1 | 0.0 | – | 1.00 | – | – | – |
+| fixed q=8 | 5.5 | – | 8.00 | – | – | – |
+| adaptive | 0.9 | – | 2.12 | – | – | – |
+| no-damping ablation | 3.3 | – | 6.50 | – | – | – |
+
+Reaction = busy phase starts → first step down. Recovery = busy phase ends → q back at its level from before the busy phase. – = never happened in the phase.
+
+**Comparison:** the best fixed depth that keeps misses ≤ 5 % is fixed q=1 (0.0 % misses, 3285 MiB/s). Adaptive: 0.9 % misses, 4350 MiB/s (32 % scan rate vs that fixed depth).
+
+## Study C: overload
+
+### overload trace
+
+| Policy | reps | FG p50 ms | FG p99 ms | miss % | scan MiB/s | scan GiB | mean q | q changes | reversals/min | rejected |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| adaptive | 1 | 0.20 | 0.45 ± – | 0.5 ± – | 4463 ± – | 35 | 3.38 | 3.0 | 0.00 | 0 |
+
+**Comparison:** no fixed depth keeps misses ≤ 5 % on this trace. Adaptive: 0.5 % misses, 4463 MiB/s.
+
+## Study C: 1 MiB chunks
+
+### alternating trace
+
+| Policy | reps | FG p50 ms | FG p99 ms | miss % | scan MiB/s | scan GiB | mean q | q changes | reversals/min | rejected |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| adaptive | 1 | 0.25 | 0.50 ± – | 1.2 ± – | 5950 ± – | 46 | 1.75 | 1.0 | 0.00 | 0 |
+
+Per phase (alternating trace):
+
+| Policy | quiet miss % | busy miss % | quiet mean q | busy mean q | reaction s | recovery s |
+| --- | --- | --- | --- | --- | --- | --- |
+| adaptive | 1.2 | – | 1.75 | – | – | – |
+
+Reaction = busy phase starts → first step down. Recovery = busy phase ends → q back at its level from before the busy phase. – = never happened in the phase.
+
+**Comparison:** no fixed depth keeps misses ≤ 5 % on this trace. Adaptive: 1.2 % misses, 5950 MiB/s.
+
+## Actual depth and pending queues (Study B)
+
+| Trace | Policy | configured q (mean) | actual BG in flight (mean) | FG pending (mean / max) |
+| --- | --- | --- | --- | --- |
+| alternating | adaptive | 2.12 | 1.57 | 0.00 / 0 |
+| alternating | no-damping ablation | 6.50 | 5.15 | 0.00 / 0 |
+| alternating | fixed q=1 | 1.00 | 0.74 | 0.00 / 0 |
+| alternating | fixed q=8 | 8.00 | 6.28 | 0.00 / 0 |
+
+## Controller CPU cost and safe reductions
+
+- Controller decision: mean 0.99 µs per window, max 2.22 µs (one decision per 1000 ms window).
+- Whole dispatcher process CPU per run: adaptive 6.9 s, fixed 6.6 s.
+- Cuts of q below the reads already in flight: 4 in total; longest drain 0.277 ms; in every run no BG read was sent while bg_out ≥ q.
+
+## Diagnosis: oscillation and recovery (adaptive vs no-damping ablation)
+
+| Trace | Policy | q changes | reversals/min | time at q=1/2/4/8 (%) | miss % | scan MiB/s |
+| --- | --- | --- | --- | --- | --- | --- |
+| alternating | adaptive | 3.0 | 7.50 | 12/75/12/0 | 0.9 | 4350 |
+| alternating | no-damping ablation | 5.0 | 30.00 | 0/0/38/62 | 3.3 | 5343 |
+
+A reversal is q going up then down (or down then up). Many reversals = oscillation.
+
+Figures: `B_constant_timeseries.png`, `B_alternating_timeseries.png`, `B_tradeoff_miss.png`, `B_tradeoff_p99.png`, `ablation_oscillation.png`, `C_overload.png`, `C_chunk1m.png`, `C_chunk1m_timeseries.png`, `C_overload_timeseries.png`.
+
+Platform note: all runs use only the course server (babbage). Its disk is a shared Dell PERC H755 RAID virtual disk. The 0.5 ms target was frozen from Study A (Milestone 2) on the same server, before these evaluation runs.
+
+outputs in /home/sgf.edubear.net/mt6289s/milestone3/results/m3quick_20261112T170930Z_9cbab8

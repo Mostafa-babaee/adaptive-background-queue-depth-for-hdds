@@ -1,0 +1,26 @@
+{
+  "_note": "Milestone 3 Study B and Study C on babbage, the course server (the only platform used). Same workload settings as Milestone 2 (config/workload.json) except: window_ms 1000 and target_ms 0.5 for EVERY policy, so fixed and adaptive runs count misses the same way. Traces start at t = 0 (warm-up included) and are reused by every policy and repetition.",
+  "target_ms": 0.5,
+  "window_ms": 1000,
+  "traces": {
+    "constant":    {"rate": 50,   "seed": 45, "_note": "same rate as Milestone 2, NEW seed: the Milestone 2 trace (seed 42) was used to tune the target, so evaluation uses a separate trace (plan: tuning runs kept separate from final evaluation runs)"},
+    "alternating": {"rate": 50,   "busy_rate": 200, "phase_s": 20, "seed": 43,
+                    "_note": "20 s quiet (50/s), 20 s busy (200/s), repeating, quiet first"},
+    "overload":    {"rate": 2000, "seed": 44, "_note": "demanding overload case (Study C)"}
+  },
+  "studies": {
+    "B": {"traces": ["constant", "alternating"],
+          "policies": ["fixed:1", "fixed:2", "fixed:4", "fixed:8", "adaptive", "adaptive_nodamp"],
+          "reps": 3, "chunk_bytes": 262144},
+    "C_overload": {"traces": ["overload"],
+                   "policies": ["fixed:1", "fixed:2", "fixed:4", "fixed:8", "adaptive"],
+                   "reps": 2, "chunk_bytes": 262144},
+    "C_chunk1m": {"traces": ["alternating"],
+                  "policies": ["fixed:1", "fixed:2", "fixed:4", "fixed:8", "adaptive"],
+                  "reps": 2, "chunk_bytes": 1048576}
+  },
+  "quick": {"warmup_s": 2, "duration_s": 8, "cache_flush_mib": 64,
+            "runs": [["B", "alternating", "fixed:1"], ["B", "alternating", "fixed:8"],
+                     ["B", "alternating", "adaptive"], ["B", "alternating", "adaptive_nodamp"],
+                     ["C_overload", "overload", "adaptive"], ["C_chunk1m", "alternating", "adaptive"]]}
+}
