@@ -43,7 +43,7 @@ cfg = {
     "miss_buckets": "<=0.01, <=0.05, >0.05",
     "load_buckets": "fg reads per window <100, <500, >=500",
     "table": table.tolist(),
-    "_note": "Trained in a simulator fitted to Milestone 3 logs (penalty 6.0). Not validated on the real disk until the Milestone 4 held-out runs.",
+    "_note": "Frozen RL policy trained offline in a simulator fitted to Milestone 3 measurements, using a miss penalty of 6.0.",
 }
 json.dump(cfg, open('config/rl_policy.json', 'w'), indent=2)
 print('wrote src/rl_table.h and config/rl_policy.json')

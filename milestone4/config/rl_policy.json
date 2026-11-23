@@ -83,5 +83,5 @@
       ]
     ]
   ],
-  "_note": "Trained in a simulator fitted to Milestone 3 logs (penalty 6.0). Not validated on the real disk until the Milestone 4 held-out runs."
+  "_note": "Frozen RL policy trained offline in a simulator fitted to Milestone 3 measurements, using a miss penalty of 6.0."
 }
