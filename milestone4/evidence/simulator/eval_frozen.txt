@@ -1,0 +1,21 @@
+case                         policy                         miss %  viol %    MiB/s     q
+chunk256k constant           adaptive (Milestone 3 rule)      2.34   17.28     4964  5.52
+chunk256k constant           no damping (up=1)                3.82   28.04     5428  6.78
+chunk256k constant           RL (trained)                     0.01    0.00     4807  2.00
+chunk256k constant           fixed q=2                        0.01    0.00     4807  2.00
+chunk256k constant           fixed q=8                        5.35   39.18     5917  8.00
+chunk256k alternating        adaptive (Milestone 3 rule)      2.39   13.58     5180  6.04
+chunk256k alternating        no damping (up=1)                3.48   20.15     5589  7.12
+chunk256k alternating        RL (trained)                     0.01    0.00     4806  2.00
+chunk256k alternating        fixed q=2                        0.01    0.00     4806  2.00
+chunk256k alternating        fixed q=8                        4.44   26.25     5945  8.00
+chunk256k overload           adaptive (Milestone 3 rule)      3.23   10.91     5137  6.43
+chunk256k overload           no damping (up=1)                4.35   14.77     5468  7.35
+chunk256k overload           RL (trained)                     2.57    8.74     5151  5.00
+chunk256k overload           fixed q=2                        0.02    0.00     4600  2.00
+chunk256k overload           fixed q=8                        5.14   17.50     5702  8.00
+chunk1m alternating          adaptive (Milestone 3 rule)      2.66   10.63     5716  1.69
+chunk1m alternating          no damping (up=1)                8.89   24.30     6196  2.15
+chunk1m alternating          RL (trained)                     3.57   15.38     6307  2.00
+chunk1m alternating          fixed q=2                        3.57   15.38     6307  2.00
+chunk1m alternating          fixed q=8                       99.99  100.00     7063  8.00

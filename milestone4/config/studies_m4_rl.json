@@ -1,0 +1,24 @@
+{
+  "_note": "Milestone 4 HELD-OUT test of the RL policy on babbage. New trace seeds (46, 47, 48) that were not used for training, tuning or Milestone 3. Same workload and frozen settings as Milestone 3 (window 1000 ms, target 0.5 ms). Policies: fixed q=2 and q=8 (baselines), adaptive (frozen Milestone 3 rule), no-damping ablation (kept so the diagnosis section runs), and rl (frozen Milestone 4 table, config/rl_policy.json). Run with: python3 scripts/run_study_bc.py --studies config/studies_m4_rl.json ...",
+  "target_ms": 0.5,
+  "window_ms": 1000,
+  "traces": {
+    "constant":    {"rate": 50,   "seed": 46, "_note": "held-out seed 46 (training used simulator only; M3 used 45)"},
+    "alternating": {"rate": 50,   "busy_rate": 200, "phase_s": 20, "seed": 47,
+                    "_note": "held-out seed 47, 20 s quiet then 20 s busy, quiet first"},
+    "overload":    {"rate": 2000, "seed": 48, "_note": "held-out seed 48, demanding overload case"}
+  },
+  "studies": {
+    "B": {"traces": ["constant", "alternating"],
+          "policies": ["fixed:2", "fixed:8", "adaptive", "adaptive_nodamp", "rl"],
+          "reps": 3, "chunk_bytes": 262144},
+    "C_overload": {"traces": ["overload"],
+                   "policies": ["fixed:2", "fixed:8", "adaptive", "rl"],
+                   "reps": 3, "chunk_bytes": 262144},
+    "C_chunk1m": {"traces": ["alternating"],
+                  "policies": ["fixed:2", "fixed:8", "adaptive", "rl"],
+                  "reps": 3, "chunk_bytes": 1048576}
+  },
+  "quick": {"warmup_s": 2, "duration_s": 8, "cache_flush_mib": 64,
+            "runs": [["B", "alternating", "rl"], ["B", "alternating", "adaptive"]]}
+}

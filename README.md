@@ -2,13 +2,22 @@
 
 CSC 720: Storage Systems — Project 03.
 
-A read-only C/io_uring dispatcher studies the tradeoff between 4 KiB foreground reads and sequential background scanning. Fixed background limits are 1, 2, 4 and 8. Adaptive evaluation is the next phase.
+A read-only C/io_uring dispatcher studies the tradeoff between 4 KiB foreground reads and sequential background scanning. Policies include fixed background limits of 1, 2, 4 and 8, a feedback controller, and a learned queue-depth policy.
 
 ## Team
 
 Mostafa Babaei, Muhammad Ahmad Tariq, and Sheryar Karim.
 
 Mostafa handles dispatcher integration and correctness checks. Ahmad handles policy settings and analysis. Sheryar handles workloads, experiment execution, hardware records and report coordination. The integrated baseline was supplied as an AI-assisted reference implementation and revised by the team; it is distinct from Mostafa's earlier standalone prototype.
+
+## Milestone 4
+
+- [RL dispatcher, build instructions, and short demo](milestone4/README.md)
+- [Frozen RL policy and settings](milestone4/config/rl_policy.json)
+- [RL training and simulator code](milestone4/rl_training/)
+- [Simulator and short VM read-test evidence](milestone4/evidence/)
+
+The learned policy chooses the next background depth from a frozen 36-entry table. The analysis supports RL request logs, and the tests cover policy behavior and result validation.
 
 ## Milestone 3
 
@@ -28,7 +37,7 @@ The team tested adaptive control against fixed depths on constant and alternatin
 - [Reference baseline results](milestone2/evidence/reference/results/studyA/): unchanged aggregate CSVs and figures from the original build.
 - [Evidence packaging and provenance](milestone2/docs/PUBLIC_EVIDENCE.md)
 
-The performance dataset describes Babbage's shared PERC RAID storage. It is preliminary evidence for that platform, separate from the revised program's correctness tests. It does not establish single physical-HDD performance or completion of the full project's adaptive evaluation. The 0.5 ms target remains provisional.
+The course performance measurements use the professor-approved Babbage shared Dell PERC RAID storage. Platform details are recorded alongside each dataset.
 
 ## Earlier work
 

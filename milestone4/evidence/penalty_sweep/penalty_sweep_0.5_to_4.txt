@@ -1,0 +1,6 @@
+pen 0.5 256k cons miss 5.39 MiB/s 5915 | 256k alte miss 4.48 MiB/s 5943 | 256k over miss 5.13 MiB/s 5703 | nk1m alte miss 47.27 MiB/s 7118
+pen 1.0 256k cons miss 0.90 MiB/s 4908 | 256k alte miss 3.05 MiB/s 5524 | 256k over miss 2.06 MiB/s 4916 | nk1m alte miss 47.27 MiB/s 7118
+pen 2.0 256k cons miss 3.74 MiB/s 5566 | 256k alte miss 3.44 MiB/s 5662 | 256k over miss 5.13 MiB/s 5703 | nk1m alte miss 49.73 MiB/s 6714
+pen 4.0 256k cons miss 0.01 MiB/s 4807 | 256k alte miss 1.64 MiB/s 5317 | 256k over miss 2.81 MiB/s 5203 | nk1m alte miss 7.64 MiB/s 6343
+
+[exited with code 0]

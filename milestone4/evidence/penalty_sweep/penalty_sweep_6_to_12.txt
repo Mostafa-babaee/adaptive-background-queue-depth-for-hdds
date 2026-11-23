@@ -1,0 +1,3 @@
+pen 6.0 256k cons miss 0.01 MiB/s 4807 | 256k alte miss 0.01 MiB/s 4807 | 256k over miss 2.57 MiB/s 5151 | nk1m alte miss 3.53 MiB/s 6308
+pen 8.0 256k cons miss 0.01 MiB/s 4799 | 256k alte miss 0.01 MiB/s 4803 | 256k over miss 0.03 MiB/s 4600 | nk1m alte miss 2.00 MiB/s 5479
+pen 12.0 256k cons miss 0.01 MiB/s 4799 | 256k alte miss 0.01 MiB/s 4803 | 256k over miss 0.03 MiB/s 4600 | nk1m alte miss 1.95 MiB/s 5452

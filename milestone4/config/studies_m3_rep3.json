@@ -1,0 +1,20 @@
+{
+  "_note": "Extra third repetition for the two Study C comparisons (overload / high-demand trace, and the alternating trace with 1 MiB chunks), so every Study C condition has 3 repetitions like Study B. Use with: python3 scripts/run_study_bc.py --studies config/studies_m3_rep3.json --only-rep 3 ... Settings are identical to config/studies_m3.json (same traces, target, window, policies).",
+  "target_ms": 0.5,
+  "window_ms": 1000,
+  "traces": {
+    "constant":    {"rate": 50,   "seed": 45},
+    "alternating": {"rate": 50,   "busy_rate": 200, "phase_s": 20, "seed": 43},
+    "overload":    {"rate": 2000, "seed": 44}
+  },
+  "studies": {
+    "C_overload": {"traces": ["overload"],
+                   "policies": ["fixed:1", "fixed:2", "fixed:4", "fixed:8", "adaptive"],
+                   "reps": 3, "chunk_bytes": 262144},
+    "C_chunk1m": {"traces": ["alternating"],
+                  "policies": ["fixed:1", "fixed:2", "fixed:4", "fixed:8", "adaptive"],
+                  "reps": 3, "chunk_bytes": 1048576}
+  },
+  "quick": {"warmup_s": 2, "duration_s": 8, "cache_flush_mib": 64,
+            "runs": [["C_overload", "overload", "adaptive"]]}
+}
