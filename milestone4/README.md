@@ -58,6 +58,15 @@ python3 evaluate_frozen.py
 
 The evaluator reads `windows.json` and `rl_table_frozen.npy`. The simulator samples from the supplied window records with replacement. The frozen table matches `table_pen6.0.npy`, the C header, and the JSON table. The supplied evaluation output is in `evidence/simulator/eval_frozen.txt`.
 
+Two additional checks run from `rl_training/` or from any working directory:
+
+```bash
+python3 check_training_duplicates.py
+python3 sweep_check.py
+```
+
+`check_training_duplicates.py` compares the frozen policy on the original training windows and on a pool with exact duplicate records removed. It prints both sets of simulated metrics without retraining the policy. `sweep_check.py` evaluates each saved penalty table with the frozen evaluation seeds. Both use 1000 episodes per case and locate their inputs relative to the script file.
+
 To reproduce the penalty-6 training settings, run the following from `rl_training/`:
 
 ```bash
